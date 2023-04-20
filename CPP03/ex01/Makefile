@@ -1,7 +1,7 @@
 CC= c++
-NAME= fixed
+NAME= andopen
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp Fixed.cpp
+SRC= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ=$(SRC:.c=.o)
 
 
