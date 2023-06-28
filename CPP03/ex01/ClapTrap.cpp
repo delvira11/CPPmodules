@@ -2,36 +2,36 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
-    this->name = "hola";
-    this->hitPoints = 10;
-    this->energyPoints = 10;
-    this->attackDamage = 2;
+    std::cout << "ClapTrap Default constructor called" << std::endl;
+    this->name = "";
+    this->hitPoints = 100;
+    this->energyPoints = 50;
+    this->attackDamage = 20;
 }
 
 ClapTrap::ClapTrap( std::string nameparam )
 {
-    std::cout << "Constructor called" << std::endl;
+    std::cout << "ClapTrap name Constructor called" << std::endl;
     this->name = nameparam;
-    this->hitPoints = 10;
-    this->energyPoints = 10;
-    this->attackDamage = 2;
+    this->hitPoints = 100;
+    this->energyPoints = 50;
+    this->attackDamage = 20;
 }
 
 ClapTrap::~ClapTrap()
 {
-std::cout << "Destructor called" << std::endl;
+std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap& copy)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = copy;
 }
 
 ClapTrap&  ClapTrap::operator=(ClapTrap &copy)
 {
-    std::cout << "Assign operator overcharged" << std::endl;
+    std::cout << "ClapTrap assign operator overcharged" << std::endl;
     this->name = copy.name;
     this->hitPoints = copy.hitPoints;
     this->energyPoints = copy.energyPoints;
@@ -41,8 +41,11 @@ ClapTrap&  ClapTrap::operator=(ClapTrap &copy)
 
 void    ClapTrap::printName()
 {
+    std::cout << std::endl;
     std::cout << this->name << std::endl;
-
+    std::cout << this->hitPoints << std::endl;
+    std::cout << this->energyPoints << std::endl;
+    std::cout << this->attackDamage << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -83,7 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << this->name << " has repaired "
         << amount << " of hitpoints back" << std::endl;
         this->energyPoints -= 1;
-        this->hitPoints += 1;
+        this->hitPoints += amount;
         std::cout << "ClapTrap " << this->name << " has " 
         << this->hitPoints << " hitpoints left" << std::endl;
     }

@@ -22,7 +22,7 @@ Fixed::~Fixed()
 
 }
 
-Fixed const& Fixed::operator=(const Fixed &copy)
+Fixed& Fixed::operator=(const Fixed &copy)
 {
     std::cout << "Asignation operator called" << std::endl;
     this->pointint = copy.pointint;
@@ -261,3 +261,8 @@ const Fixed&   Fixed::max(const Fixed &num1, const Fixed& num2)
     else
         return(num2);
 }
+
+
+/////// EX 03 ////////
+
+

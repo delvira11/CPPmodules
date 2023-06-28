@@ -1,5 +1,5 @@
 CC= c++
-NAME= andopen
+NAME= claptrap
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp ClapTrap.cpp
 OBJ=$(SRC:.c=.o)

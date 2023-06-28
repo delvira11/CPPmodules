@@ -50,9 +50,7 @@ void Contact::fill_info(void)
         std::cin >> phone_number;
     }
     std::cout << "darkest secret : ";
-    // std::cin.ignore();
-    // std::cin.clear();
-std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, input);
     darkest_secret = input;
 }

@@ -9,7 +9,7 @@ class Fixed
         Fixed();
         ~Fixed();
         Fixed( Fixed const &copy );
-        Fixed const&  operator=(const Fixed &copy);
+        Fixed&  operator=(const Fixed &copy);
         int     getRawBits( void )const;
         void    setRawBits ( int const raw );
         ///// EX 01 /////
@@ -38,5 +38,11 @@ class Fixed
         static const Fixed&   min(const Fixed &num1, const Fixed &num2);
         static const Fixed&   max(const Fixed &num1, const Fixed &num2);
 
+        ///// EX 03 ////////
+
+
+
+
 
 };
+

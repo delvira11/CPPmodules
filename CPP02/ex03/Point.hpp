@@ -12,15 +12,11 @@ class Point
 
 };
 
-Point::Point()
+Point::Point() : x(0), y(0)
 {
-    Fixed const a (0);
-    Fixed const b (0);
-
-    this->x = a;
-    // this->y = b;
 }
 
 Point::~Point()
 {
+    
 }

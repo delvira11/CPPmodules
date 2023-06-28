@@ -1,9 +1,19 @@
 #include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap
-{
-    private:
 
+//ScavTrap constructor inheritance from ClapTrap
+
+class ScavTrap : public ClapTrap
+{
     public:
-        using ClapTrap::ClapTrap;
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(ScavTrap &copy);
+        ~ScavTrap();
+
+        void    printName();
+
+        ScavTrap & operator=(ScavTrap const & copy);
+        void attack(const std::string& target);
+        void guardGate();
 };

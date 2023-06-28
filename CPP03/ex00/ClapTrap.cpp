@@ -3,10 +3,10 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "Default constructor called" << std::endl;
-    this->name = "hola";
+    this->name = "";
     this->hitPoints = 10;
     this->energyPoints = 10;
-    this->attackDamage = 2;
+    this->attackDamage = 0;
 }
 
 ClapTrap::ClapTrap( std::string nameparam )
@@ -15,7 +15,7 @@ ClapTrap::ClapTrap( std::string nameparam )
     this->name = nameparam;
     this->hitPoints = 10;
     this->energyPoints = 10;
-    this->attackDamage = 2;
+    this->attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()
@@ -83,7 +83,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << this->name << " has repaired "
         << amount << " of hitpoints back" << std::endl;
         this->energyPoints -= 1;
-        this->hitPoints += 1;
+        this->hitPoints += amount;
         std::cout << "ClapTrap " << this->name << " has " 
         << this->hitPoints << " hitpoints left" << std::endl;
     }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 char *to_upper(char *str)
 {
     int i = 0;
@@ -26,11 +24,11 @@ int main(int nargs, char **args)
     int i = 1;
 
     if (nargs == 1)
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
     while (args[i])
     {
     args[i] = to_upper(args[i]);
-    cout << (args[i]);
+    std::cout << (args[i]) << std::endl;
     i++;
     }
     return (0);
