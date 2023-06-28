@@ -22,8 +22,8 @@ class Contact
 Contact::Contact(void)
 {
     phone_number = 0;
-    first_name = "x";
-    last_name = "x";
+    first_name = "";
+    last_name = "";
 }
 
 bool    is_empty(std::string str)
