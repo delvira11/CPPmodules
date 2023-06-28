@@ -26,20 +26,52 @@ Contact::Contact(void)
     last_name = "x";
 }
 
+bool    is_empty(std::string str)
+{
+    int i = 0;
+
+    while (str[i])
+    {
+        if (str[i] != ' ' && str[i] != '\n')
+            return (false);
+        i++;
+    }
+    return (true);
+}
+
 void Contact::fill_info(void)
 {
     std::string input;
+    bool        loop_var;
 
+    loop_var = false;
     std::cout << "Nombre : ";
     std::cin.ignore();
+    while (loop_var == false)
+    {
     std::getline(std::cin, input);
     first_name = input;
+    if (!is_empty(first_name))
+        loop_var = true;
+    }
+    loop_var = false;
     std::cout << "Apellido : ";
+    while (loop_var == false)
+    {
     std::getline(std::cin, input);
     last_name = input;
+    if (!is_empty(last_name))
+        loop_var = true;
+    }
+    loop_var = false;
     std::cout << "Nickname : ";
+    while (loop_var == false)
+    {
     std::getline(std::cin, input);
     nickname = input;
+    if (!is_empty(nickname))
+        loop_var = true;
+    }
     std::cout << "phone_number : ";
     std::cin >> phone_number;
     while (std::cin.fail())
@@ -51,8 +83,14 @@ void Contact::fill_info(void)
     }
     std::cout << "darkest secret : ";
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    loop_var = false;
+    while (loop_var == false)
+    {
     std::getline(std::cin, input);
     darkest_secret = input;
+    if (!is_empty(darkest_secret))
+        loop_var = true;
+    }
 }
 
 void Contact::print_info(void)
