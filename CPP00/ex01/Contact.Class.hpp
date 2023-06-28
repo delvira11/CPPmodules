@@ -3,16 +3,14 @@
 
 #include <iostream>
 
-using namespace std;
-
 class Contact
 {
     private:
-        string  first_name;
-        string  last_name;
-        string  nickname;
+        std::string  first_name;
+        std::string  last_name;
+        std::string  nickname;
         int     phone_number;
-        string  darkest_secret;
+        std::string  darkest_secret;
     public:
         Contact(void);
         void    fill_info(void);
@@ -24,41 +22,51 @@ class Contact
 Contact::Contact(void)
 {
     phone_number = 0;
-    first_name = "";
-    last_name = "";
+    first_name = "x";
+    last_name = "x";
 }
 
 void Contact::fill_info(void)
 {
-    cout << "Nombre : ";
-    cin >> first_name;
-    cout << "Apellido : ";
-    cin >> last_name;
-    cout << "Nickname : ";
-    cin >> nickname;
-    cout << "phone_number : ";
-    cin >> phone_number;
-    while (cin.fail())
+    std::string input;
+
+    std::cout << "Nombre : ";
+    std::cin.ignore();
+    std::getline(std::cin, input);
+    first_name = input;
+    std::cout << "Apellido : ";
+    std::getline(std::cin, input);
+    last_name = input;
+    std::cout << "Nickname : ";
+    std::getline(std::cin, input);
+    nickname = input;
+    std::cout << "phone_number : ";
+    std::cin >> phone_number;
+    while (std::cin.fail())
     {
-        cout << "Number not valid, please try again" << endl;
-        cin.clear();
-        cin.ignore(256, '\n');
-        cin >> phone_number;
+        std::cout << "Number not valid, please try again" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(256, '\n');
+        std::cin >> phone_number;
     }
-    cout << "darkest secret : ";
-    cin >> darkest_secret;
+    std::cout << "darkest secret : ";
+    // std::cin.ignore();
+    // std::cin.clear();
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, input);
+    darkest_secret = input;
 }
 
 void Contact::print_info(void)
 {
-    cout << "Nombre: " << first_name << endl;
-    cout << "Apellido: " << last_name << endl;
-    cout << "Nickname: " << nickname << endl;
-    cout << "Phone number: " << phone_number << endl;
-    cout << "Darkest secret: " << darkest_secret << endl;
+    std::cout << "Nombre: " << first_name << std::endl;
+    std::cout << "Apellido: " << last_name << std::endl;
+    std::cout << "Nickname: " << nickname << std::endl;
+    std::cout << "Phone number: " << phone_number << std::endl;
+    std::cout << "Darkest secret: " << darkest_secret << std::endl;
 }
 
-string    ft_print_10_chars(string arg)
+std::string    ft_print_10_chars(std::string arg)
 {
     char    str[11];
     int     i;
@@ -99,8 +107,8 @@ string    ft_print_10_chars(string arg)
 void Contact::print_basic_info(int i)
 {
 
-    cout << "|" <<"         " <<(i + 1) << "|" << ft_print_10_chars(first_name) << "|" <<
-         ft_print_10_chars(last_name) << "|" << ft_print_10_chars(nickname) << "|" <<endl;
+    std::cout << "|" <<"         " <<(i + 1) << "|" << ft_print_10_chars(first_name) << "|" <<
+         ft_print_10_chars(last_name) << "|" << ft_print_10_chars(nickname) << "|" << std::endl;
 }
 
 

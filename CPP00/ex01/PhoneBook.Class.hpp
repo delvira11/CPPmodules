@@ -28,7 +28,7 @@ void PhoneBook::add_contact(int i)
 
 void PhoneBook::contact_info(int i)
 {
-    cout << "INFORMACION DEL CONTACTO "  << i << ":" << endl;
+    std::cout << "INFORMACION DEL CONTACTO "  << i << ":" << std::endl;
     agenda[i - 1].print_info();
 }
 

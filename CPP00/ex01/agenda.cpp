@@ -2,21 +2,19 @@
 #include "Contact.Class.hpp"
 #include "PhoneBook.Class.hpp"
 
-using namespace std;
-
 
 int main()
 {
     PhoneBook   agenda;
-    string      cmd;
+    std::string      cmd;
     int         i;
     int         contact;
 
     i = 0;
     while (1)
     {
-    cout << "Introduce un comando : ADD, SEARCH o EXIT" << endl;
-    cin >> cmd;
+    std::cout << "Introduce un comando : ADD, SEARCH o EXIT" << std::endl;
+    std::cin >> cmd;
     if (cmd == "ADD")
     {
         agenda.add_contact(i);
@@ -27,14 +25,14 @@ int main()
     else if (cmd == "SEARCH")
     {
         agenda.show_contacts();
-        cout << "Introduce el numero del contacto para ver la información: ";
-        cin >> contact;
+        std::cout << "Introduce el numero del contacto para ver la información: ";
+        std::cin >> contact;
         while (contact > 8 || contact < 1)
         {
-        cout << "Numbero fuera de rango, introduce un numero entre 1 y 8" << endl;
-        cin.clear();
-        cin.ignore(256, '\n');
-        cin >> contact;
+        std::cout << "Numbero fuera de rango, introduce un numero entre 1 y 8" << std::endl;
+        std::cin.clear();
+        std::cin.ignore(256, '\n');
+        std::cin >> contact;
         }
         agenda.contact_info(contact);
 
