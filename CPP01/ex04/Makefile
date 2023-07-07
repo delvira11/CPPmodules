@@ -1,5 +1,5 @@
 CC= c++
-NAME= zombieHorde
+NAME= replace
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp
 OBJ=$(SRC:.c=.o)

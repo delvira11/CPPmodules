@@ -6,12 +6,13 @@ int main()
     int i;
 
     i = 0;
-    horde = zombieHorde(5, "jona");
+    horde = zombieHorde(5, "John");
     while (i < 5)
     {
         horde[i].announce();
-        horde[i].~Zombie();
+        //horde[i].~Zombie();
         i++;
     }
-    system("leaks -q zombieHorde");
+    delete[] horde;
+    //system("leaks -q zombieHorde");
 }

@@ -20,7 +20,7 @@ int main(int nargs, char** args)
     nameout = name + ".replace";
     std::ofstream fileout(nameout);
 
-    filein.open(name);
+   filein.open(name);
     if (filein.is_open())
     {
         while (filein.good())
@@ -30,7 +30,7 @@ int main(int nargs, char** args)
             stringin.append("\n");
         }
     }
-in.find(s1)] != '\0')
+    while (stringin[stringin.find(s1)] != '\0')
     {
     position = stringin.find(s1);
     stringin.erase(position, s1.length());
@@ -38,5 +38,4 @@ in.find(s1)] != '\0')
     }
     fileout << stringin;
     
-    while (stringin[string
 }

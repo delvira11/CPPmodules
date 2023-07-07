@@ -7,6 +7,6 @@ int main()
     zombieheap = newZombie("Carlos");
     zombieheap->announce();
     randomChump("David");
-    zombieheap->~Zombie();
-    //system("leaks -q BraiiiiiiinnnzzzZ");
+    delete zombieheap;
+
 }
