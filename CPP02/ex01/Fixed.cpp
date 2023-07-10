@@ -79,6 +79,21 @@ Fixed::Fixed( const float num)
 
 }
 
+double  ft_pow(double num)
+{
+    float result;
+    int i;
+
+    i = 0;
+    result = 1;
+    while (i > num)
+    {
+        result /= 2;
+        i--;
+    }
+    return  (result);
+}
+
 float Fixed::toFloat( void ) const
 {
     int exp = -1;
@@ -89,7 +104,7 @@ float Fixed::toFloat( void ) const
     //printBits(fpointint);
     for (int bit = 7; bit >= 0; --bit)
     {
-        value += (((fpointint >> bit) & 1) * pow(2, exp));
+        value += (((fpointint >> bit) & 1) * ft_pow(exp));
         exp--;
     }
     fpointint = fpointint >> this->fracbits;
