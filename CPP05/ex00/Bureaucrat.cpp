@@ -8,7 +8,7 @@
 Bureaucrat::Bureaucrat(std::string const name) : name(name)
 {
     std::cout << "Constructor called" << std::endl;
-    this->grade = 150;
+    this->grade = 1;
 }
 Bureaucrat::~Bureaucrat()
 {
@@ -43,9 +43,16 @@ int Bureaucrat::getGrade()
 
 void    Bureaucrat::incrementGrade()
 {
-    if (this->grade - 1 < 1)
+    try 
     {
-        throw "Bureaucrat already has the highest grade";
+        this->grade -= 1;
+        if (this->grade < 1)
+        throw 1;
+
+    }
+    catch (int num)
+    {
+        std::cout <<"Bureaucrat already has the highest grade" << std::endl;
     }
     this->grade -= 1;
 }

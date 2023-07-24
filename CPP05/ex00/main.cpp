@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:05:47 by delvira-          #+#    #+#             */
-/*   Updated: 2023/07/24 13:59:08 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:00:49 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int main()
     Bureaucrat david("David");
 
     std::cout << david.getName() << std::endl;
-    david.decrementGrade();
+    david.incrementGrade();
     
 }
