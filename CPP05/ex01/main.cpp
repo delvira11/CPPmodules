@@ -10,28 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-    //Bureaucrat david("David", 1);
+    Form jacob("Jacob");
 
-    //std::cout << david.getName() << std::endl;
-    //david.incrementGrade();
-    //std::cout << david.getGrade() << std::endl;
-    try
-    {
-        Bureaucrat jacob("Jacob", 0);
-        //jacob.decrementGrade();
-    }
-    catch (Bureaucrat::GradeTooLowException &ex)
-    {
-        std::cout << ex.what() << std::endl;
-    }
-    catch (Bureaucrat::GradeTooHighException &ex)
-    {
-        std::cout << ex.what() << std::endl;
-    }
-        Bureaucrat jacob("Jacob", 1);
-    std::cout << jacob;
+//    std::cout << jacob.getGrade_sign() << std::endl;
+    Bureaucrat john("John", 5);
+  //  std::cout << john.getGrade() << std::endl;
+    
+
+    john.signForm(jacob);
 }

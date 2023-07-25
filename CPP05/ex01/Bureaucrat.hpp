@@ -1,6 +1,8 @@
 #include <iostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
     private:
@@ -18,7 +20,9 @@ class Bureaucrat
         int                 getGrade();
         void                incrementGrade();
         void                decrementGrade();
-        friend std::ostream& operator<<(std::ostream& os, Bureaucrat& obj);
+        friend std::ostream& operator<<(std::ostream& os, Bureaucrat& copy);
+
+        void                signForm(Form &form);
 
     class GradeTooHighException : public std::exception
     {
