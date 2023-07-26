@@ -1,7 +1,7 @@
 CC= c++
 NAME= aform
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp Bureaucrat.cpp AForm.cpp
+SRC= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 OBJ=$(SRC:.c=.o)
 
 

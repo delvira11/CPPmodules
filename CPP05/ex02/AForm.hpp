@@ -11,7 +11,7 @@ class AForm
         int const           grade_exec;
 
     public:
-        AForm(std::string const name);
+        AForm(std::string const name, int grade_sign, int grade_exec);
         AForm(AForm &copy);
         AForm &operator=(AForm &copy);
         ~AForm();

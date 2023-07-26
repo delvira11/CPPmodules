@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // Bureaucrat::Bureaucrat() : name("")
 // {
@@ -75,7 +75,7 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat& copy)
 }
 
 
-void    Bureaucrat::signForm(Form &form)
+void    Bureaucrat::signForm(AForm &form)
 {
     try
     {

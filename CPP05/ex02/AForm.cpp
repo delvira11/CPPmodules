@@ -1,12 +1,12 @@
 #include "AForm.hpp"
 
 
-AForm::AForm(std::string const name) : name(name), filled(false), grade_sign(1), grade_exec(1)
+AForm::AForm(std::string const name, int grade_sign, int grade_exec) : name(name), filled(false), grade_sign(grade_sign), grade_exec(grade_exec)
 {
     std::cout << "Constructor called" << std::endl;
-    if (this->grade_sign < 1 || grade_exec < 1)
+    if (this->grade_sign < 1 || this->grade_exec < 1)
         throw Bureaucrat::GradeTooHighException();
-    if (this->grade_sign > 150 || grade_exec > 150)
+    if (this->grade_sign > 150 || this->grade_exec > 150)
         throw Bureaucrat::GradeTooLowException();
 }
 
