@@ -5,9 +5,9 @@ AForm::AForm(std::string const name, int grade_sign, int grade_exec) : name(name
 {
     std::cout << "Constructor called" << std::endl;
     if (this->grade_sign < 1 || this->grade_exec < 1)
-        throw Bureaucrat::GradeTooHighException();
+        throw AForm::GradeTooHighException();
     if (this->grade_sign > 150 || this->grade_exec > 150)
-        throw Bureaucrat::GradeTooLowException();
+        throw AForm::GradeTooLowException();
 }
 
 AForm::~AForm()
@@ -50,11 +50,11 @@ int AForm::getGrade_exec() const
 
 const char *AForm::GradeTooHighException::what() const throw()
 {
-    return("Grade is too high");
+    return("Grade is too high to do this action");
 }
 const char *AForm::GradeTooLowException::what() const throw()
 {
-    return("Grade is too low");
+    return("Grade is too low to do this action");
 }
 
 const char *AForm::FormNotSigned::what() const throw()

@@ -21,15 +21,16 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &c
 
 void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    (void)executor;
     if (executor.getGrade() > this->getGrade_exec())
     {
         throw AForm::GradeTooLowException();
     }
-    if (this->getFilled() == false)
+    else if (this->getFilled() == false)
     {
         throw AForm::FormNotSigned();
     }
+    else
+    {
     std::string filename;
 
     filename = this->target + "_shrubbery ";
@@ -48,5 +49,5 @@ void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
     } else {
         std::cout << "Failed to open the file." << std::endl;
     }
-  
+    }
 }

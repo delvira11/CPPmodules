@@ -1,4 +1,4 @@
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -6,10 +6,13 @@ int main()
     try
     {
     ShrubberyCreationForm home("home");
-    Bureaucrat me("me", 5);
+    Bureaucrat me("me", 1);
+    RobotomyRequestForm yoo("yoo");
+    PresidentialPardonForm noo("noo");
 
-    me.signForm(home);
-    home.execute(me);
+
+    me.signForm(noo);
+    noo.execute(me);
     }
     catch(const std::exception& e)
     {

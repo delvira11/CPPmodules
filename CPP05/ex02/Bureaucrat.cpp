@@ -58,14 +58,14 @@ void    Bureaucrat::decrementGrade()
     grade += 1;
 }
 
-const char *Bureaucrat::GradeTooHighException::what()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("Bureaucrat already has the highest grade");
+    return ("Bureaucrat grade is too high");
 }
 
-const char *Bureaucrat::GradeTooLowException::what()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("Bureaucrat already has the lowest grade");
+    return ("Bureaucrat grade is too low");
 }
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& copy)
@@ -82,7 +82,7 @@ void    Bureaucrat::signForm(AForm &form)
         form.beSigned(*this);
         std::cout << "Bureaucrat " << this->getName() << " signed form " << form.getName() << std::endl;
     }
-    catch(Bureaucrat::GradeTooLowException& ex)
+    catch(std::exception& ex)
     {
         std::cout << "Bureaucrat " << this->getName() << " couldn't sign form " << form.getName() << " because grade it's too low" << std::endl;
     }

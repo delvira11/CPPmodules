@@ -1,8 +1,6 @@
 #include <iostream>
 #include "AForm.hpp"
 
-class Aform;
-
 class ShrubberyCreationForm : public AForm
 {
     private:
