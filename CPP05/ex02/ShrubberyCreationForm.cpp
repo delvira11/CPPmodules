@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
 {
@@ -16,4 +17,36 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &c
 {
     this->target = copy.target;
     return (*this);
+}
+
+void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+    (void)executor;
+    if (executor.getGrade() > this->getGrade_exec())
+    {
+        throw AForm::GradeTooLowException();
+    }
+    if (this->getFilled() == false)
+    {
+        throw AForm::FormNotSigned();
+    }
+    std::string filename;
+
+    filename = this->target + "_shrubbery ";
+    std::ofstream outfile(filename.c_str());
+    if (outfile.is_open()) 
+    {
+        outfile << "       _-_" << std::endl;
+        outfile << "    /~~   ~~\\" << std::endl;
+        outfile << " /~~         ~~\\" << std::endl;
+        outfile << "{               }" << std::endl;
+        outfile << "    ~  \\ //  ~" << std::endl;
+        outfile << "_- -   | | _- _" << std::endl;
+        outfile << "  _ -  | |   -_" << std::endl;
+        outfile << "      // \\" << std::endl;
+        outfile.close();
+    } else {
+        std::cout << "Failed to open the file." << std::endl;
+    }
+  
 }

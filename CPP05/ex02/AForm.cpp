@@ -33,7 +33,7 @@ std::string const AForm::getName()
     return(this->name);
 }
 
-bool    AForm::getFilled()
+bool    AForm::getFilled() const
 {
     return (this->filled);
 }
@@ -43,18 +43,23 @@ int AForm::getGrade_sign()
     return (this->grade_sign);
 }
 
-int AForm::getGrade_exec()
+int AForm::getGrade_exec() const
 {
     return (this->grade_exec);
 }
 
-const char *AForm::GradeTooHighException::what()
+const char *AForm::GradeTooHighException::what() const throw()
 {
     return("Grade is too high");
 }
-const char *AForm::GradeTooLowException::what()
+const char *AForm::GradeTooLowException::what() const throw()
 {
     return("Grade is too low");
+}
+
+const char *AForm::FormNotSigned::what() const throw()
+{
+    return("Form is not signed");
 }
 
 std::ostream& operator<<(std::ostream& os, AForm& copy)

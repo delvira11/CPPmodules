@@ -17,7 +17,7 @@ class Bureaucrat
 
 
         std::string const   getName();
-        int                 getGrade();
+        int                 getGrade() const;
         void                incrementGrade();
         void                decrementGrade();
         friend std::ostream& operator<<(std::ostream& os, Bureaucrat& copy);
