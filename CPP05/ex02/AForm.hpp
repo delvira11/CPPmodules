@@ -16,7 +16,7 @@ class AForm
         AForm &operator=(AForm &copy);
         ~AForm();
 
-        std::string const   getName();
+        std::string const   getName() const;
         bool                getFilled() const;
         int                 getGrade_sign();
         int                 getGrade_exec() const;

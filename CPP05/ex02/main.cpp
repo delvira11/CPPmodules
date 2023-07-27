@@ -10,13 +10,12 @@ int main()
     RobotomyRequestForm yoo("yoo");
     PresidentialPardonForm noo("noo");
 
-
-    me.signForm(noo);
-    noo.execute(me);
+    me.signForm(yoo);
+    me.executeForm(yoo);
     }
-    catch(const std::exception& e)
+    catch(const std::exception& ex)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << ex.what() << std::endl;
     }
     
 }

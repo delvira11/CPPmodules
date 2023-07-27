@@ -23,6 +23,7 @@ class Bureaucrat
         friend std::ostream& operator<<(std::ostream& os, Bureaucrat& copy);
 
         void                signForm(AForm &form);
+        void                executeForm(AForm const & form);
 
     class GradeTooHighException : public std::exception
     {
