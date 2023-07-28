@@ -8,12 +8,7 @@ char *to_upper(char *str)
     new_str = str;
     while (str[i] != '\0')
     {
-       if (str[i] >= 'a' && str[i] <= 'z')
-       {
-            new_str[i] = str[i] - 32;
-       }
-       else
-            new_str[i] = str[i];
+        str[i] = std::toupper(str[i]);
         i++;
     }
     return (new_str);
@@ -22,14 +17,16 @@ char *to_upper(char *str)
 int main(int nargs, char **args)
 {
     int i = 1;
+    std::string str;
 
     if (nargs == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     while (args[i])
     {
-    args[i] = to_upper(args[i]);
-    std::cout << (args[i]) << std::endl;
-    i++;
+        args[i] = to_upper(args[i]);
+        std::cout << (args[i]);
+        i++;
     }
+    std::cout << std::endl;
     return (0);
 }

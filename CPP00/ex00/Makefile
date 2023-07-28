@@ -19,6 +19,6 @@ fclean:
 	rm -rf $(NAME)
 
 
-re:
+re: fclean all
 
 .PHONY:

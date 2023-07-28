@@ -11,7 +11,7 @@ int main()
     int         contact;
 
     i = 0;
-    while (1)
+    while (!std::cin.eof())
     {
     std::cout << "Introduce un comando : ADD, SEARCH o EXIT" << std::endl;
     std::cin >> cmd;
@@ -39,7 +39,7 @@ int main()
     }
     else if (cmd == "EXIT")
     {
-        break ;
+        return (0);
     }
     }
 }
