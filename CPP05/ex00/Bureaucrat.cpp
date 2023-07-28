@@ -58,12 +58,12 @@ void    Bureaucrat::decrementGrade()
     grade += 1;
 }
 
-const char *Bureaucrat::GradeTooHighException::what()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return ("Bureaucrat already has the highest grade");
 }
 
-const char *Bureaucrat::GradeTooLowException::what()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Bureaucrat already has the lowest grade");
 }

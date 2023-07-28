@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:05:47 by delvira-          #+#    #+#             */
-/*   Updated: 2023/07/24 19:00:49 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/07/28 15:43:12 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ int main()
         Bureaucrat jacob("Jacob", 0);
         //jacob.decrementGrade();
     }
-    catch (Bureaucrat::GradeTooLowException &ex)
+    catch (std::exception &ex)
     {
         std::cout << ex.what() << std::endl;
     }
-    catch (Bureaucrat::GradeTooHighException &ex)
-    {
-        std::cout << ex.what() << std::endl;
-    }
-        Bureaucrat jacob("Jacob", 1);
-    std::cout << jacob;
+    // catch (Bureaucrat::GradeTooHighException &ex)
+    // {
+    //     std::cout << ex.what() << std::endl;
+    // }
+    //     Bureaucrat jacob("Jacob", 1);
 }
