@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.Class.hpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/29 12:25:58 by delvira-          #+#    #+#             */
+/*   Updated: 2023/07/29 12:25:59 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
@@ -39,6 +53,22 @@ bool    is_empty(std::string str)
     return (true);
 }
 
+bool    tabs(std::string str)
+{
+    int i = 0;
+
+    while (str[i] != '\0')
+    {
+        if (str[i] == '\t')
+        {
+            std::cout << "Tabs not allowed" << std::endl;
+            return (false);
+        }
+        i++;
+    }
+    return (true);
+}
+
 void Contact::fill_info(void)
 {
     std::string input;
@@ -51,7 +81,7 @@ void Contact::fill_info(void)
     {
     std::getline(std::cin, input);
     first_name = input;
-    if (!is_empty(first_name))
+    if (!is_empty(first_name) && tabs(first_name) == true)
         loop_var = true;
     }
     loop_var = false;
@@ -60,7 +90,7 @@ void Contact::fill_info(void)
     {
     std::getline(std::cin, input);
     last_name = input;
-    if (!is_empty(last_name))
+    if (!is_empty(last_name) && tabs(last_name) == true)
         loop_var = true;
     }
     loop_var = false;
@@ -69,7 +99,7 @@ void Contact::fill_info(void)
     {
     std::getline(std::cin, input);
     nickname = input;
-    if (!is_empty(nickname))
+    if (!is_empty(nickname) && tabs(nickname) == true)
         loop_var = true;
     }
     std::cout << "phone_number : ";
@@ -88,7 +118,7 @@ void Contact::fill_info(void)
     {
     std::getline(std::cin, input);
     darkest_secret = input;
-    if (!is_empty(darkest_secret))
+    if (!is_empty(darkest_secret) && tabs(darkest_secret) == true)
         loop_var = true;
     }
 }
