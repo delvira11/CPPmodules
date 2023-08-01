@@ -11,4 +11,5 @@ class HumanA
     public:
         HumanA(std::string name, Weapon &human_weapon);
         void    attack();
+        ~HumanA();
 };

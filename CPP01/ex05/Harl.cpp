@@ -20,7 +20,12 @@ void Harl::error( void )
 
 Harl::Harl()
 {
+    std::cout << "Harl constructor called" << std::endl;
+}
 
+Harl::~Harl()
+{
+    std::cout << "Harl destructor called" << std::endl;
 }
 
 //retornoFuncion (NombreClase::*nombreVariablePunteroAMiembro)( argumentosFuncion );

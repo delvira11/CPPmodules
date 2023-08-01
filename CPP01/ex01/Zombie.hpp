@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 class Zombie
 {
 private:
@@ -12,6 +11,4 @@ public:
    void set_name(std::string zname);
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
 Zombie* zombieHorde( int N, std::string name );
