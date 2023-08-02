@@ -13,6 +13,12 @@ int main(int nargs, char** args)
     int position;
     std::ifstream filein(name);
 
+    if (nargs != 4)
+    {
+        std::cout << "This program needs 3 arguments" << std::endl;
+        return (0);
+    }
+
     name = args[1];
     s1 = args[2];
     s2 = args[3];
