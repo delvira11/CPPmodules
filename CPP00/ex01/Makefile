@@ -1,7 +1,7 @@
 CC= c++
 NAME=phonebook
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= agenda.cpp
+SRC= Agenda.cpp
 #OBJ=$(SRC:.c=.o)
 
 

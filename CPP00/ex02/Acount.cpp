@@ -6,13 +6,14 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:41:35 by delvira-          #+#    #+#             */
-/*   Updated: 2023/07/31 17:56:21 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:56:06 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
+
 
 int Account::_nbAccounts = 0;
 int Account::_totalNbDeposits = 0;
@@ -105,6 +106,7 @@ bool	Account::makeWithdrawal( int withdrawal )
     }
     this->_amount -= withdrawal;
     this->_nbWithdrawals += 1;
+    this->_totalNbWithdrawals += 1;
     std::cout << "amount:" << this->_amount << ";";
     std::cout << "nb_withdrawls:" << this->_nbWithdrawals << std::endl;
     return (true); 
@@ -118,7 +120,7 @@ int		Account::checkAmount( void ) const
 void	Account::displayStatus( void ) const
 {
     Account::_displayTimestamp();
-    std::cout << "accounts:" << this->_accountIndex << ";";
+    std::cout << "index:" << this->_accountIndex << ";";
     std::cout << "total:" << this->_amount << ";";
     std::cout << "deposits:" << this->_nbDeposits << ";";
     std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;

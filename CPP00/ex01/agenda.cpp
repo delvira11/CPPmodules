@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:25:51 by delvira-          #+#    #+#             */
-/*   Updated: 2023/07/29 12:25:52 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:30:45 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@
 #include "PhoneBook.Class.hpp"
 
 
-int main()
+int main(int nargs, char **args)
 {
     PhoneBook   agenda;
     std::string      cmd;
     int         i;
     int         contact;
 
+    (void)args;
+    if (nargs != 1)
+    {
+        std::cout << "This program doesn't need arguments" << std::endl;
+        return (0);
+    }
     i = 0;
     while (!std::cin.eof())
     {
