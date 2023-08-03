@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:29:40 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/02 13:58:11 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/03 17:31:42 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,40 @@ std::string Converter::getStrNum()
     return (this->number);
 }
 
+void    Converter::displayInfo()
+{
+    std::cout << "char: " << this->convertChar() << std::endl;
+    std::cout << "int: " << this->convertInt() << std::endl;
+    std::cout << "float: " << this->convertFloat() << std::endl;
+}
+
 int StringToInt(const std::string& str) {
     std::istringstream iss(str);
     int result;
     if (!(iss >> result)) {
-        // Handle the conversion error here if necessary
-        // For example, you can throw an exception or return a default value.
-        // For simplicity, we'll just return 0 in case of an error.
-        return 0;
+        throw Converter::IntOutRange();
     }
     return result;
 }
 
 std::string CharToString(char c) {
-    char charArray[2] = {c, '\0'}; // Create a character array with the character and a null terminator
-    return std::string(charArray); // Convert the character array to a std::string
+    char charArray[2] = {c, '\0'};
+    return std::string(charArray);
 }
 
 std::string Converter::convertChar()
 {
     char    a;
-    int var = StringToInt(this->number);
     std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
+    int var;
+    try
+    {
+        var = StringToInt(this->number);
+    }
+    catch(std::exception& e)
+    {
+        return(e.what());
+    }
 
     for (int i = 0; i < 4; i++)
     {
@@ -77,7 +89,38 @@ std::string Converter::convertChar()
 
 std::string Converter::convertInt()
 {
-    int var = StringToInt(this->number);
+    std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
+    int var;
+    try
+    {
+        var = StringToInt(this->number);
+    }
+    catch(std::exception& e)
+    {
+        return(e.what());
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->number == array[i])
+        {
+            return ("impossible");
+        }
+    }
+    return (std::to_string(var));
+}
+const char *Converter::IntOutRange::what() const throw()
+{
+    return ("impossible");
+}
 
-    if (var > )
+std::string Converter::convertFloat()
+{
+    std::stringstream ss(this->number);
+    float num;
+    ss >> num;
+
+    Fixed fix(num);
+    std::cout << "TEST: " << fix.toFloat() << std::endl;
+
+    return ("hola");
 }

@@ -6,11 +6,15 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:29:42 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/02 13:54:57 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:26:09 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <exception>
+#include "Fixed.hpp"
+
+class Fixed;
 
 class Converter
 {
@@ -27,4 +31,13 @@ class Converter
         
         std::string convertChar();
         std::string convertInt();
+        std::string convertFloat();
+
+        void    displayInfo();
+
+        class IntOutRange : public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
 };
