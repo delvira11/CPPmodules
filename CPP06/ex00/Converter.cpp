@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:29:40 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/03 17:31:42 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/03 19:04:16 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +113,53 @@ const char *Converter::IntOutRange::what() const throw()
     return ("impossible");
 }
 
+
+float stringToFloat(const std::string& str) {
+    float result;
+    int numConverted = sscanf(str.c_str(), "%f", &result);
+    if (numConverted != 1)
+    {
+        throw Converter::IntOutRange();
+    }
+    return result;
+}
+
 std::string Converter::convertFloat()
 {
-    std::stringstream ss(this->number);
+    // std::stringstream ss(this->number);
+    // float num;
+    // ss >> num;
+
+    // Fixed fix(num);
+    int var;
+
+    std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->number == array[i])
+        {
+            return ("nanf");
+        }
+    }
     float num;
-    ss >> num;
+    try
+    {    
+        num = stringToFloat(this->number);
+        var = StringToInt(this->number);
 
-    Fixed fix(num);
-    std::cout << "TEST: " << fix.toFloat() << std::endl;
+    }
+    catch(std::exception &ex)
+    {
+        return(ex.what());
+    }
+    Fixed check(num);
+    
+    if (check.checkRounded() == true)
+        std::cout << num << ".0f";
+    else
+        std::cout << num << "f";
 
-    return ("hola");
+    //std::cout << "TEST: " << 24321232.234123f << std::endl;
+    return ("");
 }

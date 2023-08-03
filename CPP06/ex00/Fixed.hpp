@@ -41,7 +41,7 @@ class Fixed
         ///// EX 03 ////////
 
 
-
+        bool checkRounded();
 
 
 };

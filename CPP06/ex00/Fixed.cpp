@@ -261,3 +261,16 @@ const Fixed&   Fixed::max(const Fixed &num1, const Fixed& num2)
 /////// EX 03 ////////
 
 
+bool    Fixed::checkRounded()
+{
+    int fpointint = this->pointint;
+
+    for (int bit = 7; bit >= 0; --bit)
+    {
+        if(((fpointint >> bit) & 1) != 0)
+        {
+            return (false);
+        };
+    }
+    return (true);
+}
