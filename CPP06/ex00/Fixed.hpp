@@ -15,6 +15,7 @@ class Fixed
         ///// EX 01 /////
         Fixed( const int num );
         Fixed( const float num);
+        Fixed( const double num);
         float   toFloat( void ) const;
         int     toInt( void ) const;
         friend  std::ostream& operator<<(std::ostream& os, const Fixed& copy);

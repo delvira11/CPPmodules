@@ -79,6 +79,29 @@ Fixed::Fixed( const float num)
 
 }
 
+Fixed::Fixed( const double num)
+{
+    this->pointint = num;
+
+    // MOVER 8 BITS LA PARTE ENTERA
+    this->pointint = this->pointint << this->fracbits;
+    //printBits(this->pointint);
+    //MOVER LA PARTE DECIMAL
+    double partedec = num - (int)num;
+    int i = 0;
+    while (i < this->fracbits)
+    {
+        partedec = partedec * 2;
+        i++;
+    }
+    //std::cout << partedec << std::endl;
+    // // // AÑADIR LOS BITS DE LA PARTE DECIMAL A LA DERECHA DE EL ENTERO
+    this->pointint += partedec;
+    //printBits(this->pointint);
+    //PONER EL PUNTO
+
+}
+
 float Fixed::toFloat( void ) const
 {
     int exp = -1;

@@ -41,6 +41,7 @@ void    Converter::displayInfo()
     std::cout << "char: " << this->convertChar() << std::endl;
     std::cout << "int: " << this->convertInt() << std::endl;
     std::cout << "float: " << this->convertFloat() << std::endl;
+    std::cout << "double: " << this->convertDouble() << std::endl;
 }
 
 int StringToInt(const std::string& str) {
@@ -159,6 +160,56 @@ std::string Converter::convertFloat()
         std::cout << num << ".0f";
     else
         std::cout << num << "f";
+
+    //std::cout << "TEST: " << 24321232.234123f << std::endl;
+    return ("");
+}
+
+double stringToDouble(const std::string& str) {
+    double result;
+    int numConverted = sscanf(str.c_str(), "%f", &result);
+    if (numConverted != 1)
+    {
+        throw Converter::IntOutRange();
+    }
+    return result;
+}
+
+std::string Converter::convertDouble()
+{
+    // std::stringstream ss(this->number);
+    // float num;
+    // ss >> num;
+
+    // Fixed fix(num);
+    int var;
+
+    std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->number == array[i])
+        {
+            return ("nanf");
+        }
+    }
+    double num;
+    try
+    {    
+        num = stringToDouble(this->number);
+        var = StringToInt(this->number);
+
+    }
+    catch(std::exception &ex)
+    {
+        return(ex.what());
+    }
+    Fixed check(num);
+    
+    if (check.checkRounded() == true)
+        std::cout << num << ".0";
+    else
+        std::cout << num;
 
     //std::cout << "TEST: " << 24321232.234123f << std::endl;
     return ("");

@@ -32,6 +32,7 @@ class Converter
         std::string convertChar();
         std::string convertInt();
         std::string convertFloat();
+        std::string convertDouble();
 
         void    displayInfo();
 
