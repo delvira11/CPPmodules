@@ -1,25 +1,29 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <queue>
 #include <list>
 #include <deque>
 #include <stack>
+#include <exception>
 
+class except: public std::exception
+{
+    public:
+        const char *what() const throw()
+        {
+            return ("ocurrence was not found");
+        }
+};
 
 template <typename T>
 
-int   easyfind(T p1, int p2)
+typename T::iterator   easyfind(T p1, int p2)
 {
-    int i;
-
-    i = 0;
-    if (p1.empty())
-        throw "empty array";
-    while(i < p1.size())
-    {
-        if (p1[i] == p2)
-            return (i);
-        i++;
-    }
-    throw "p2 not found";
+    typename T::iterator value;
+    value = std::find(p1.begin(), p1.end(), p2);
+    if (value != p1.end())
+        return (value);
+    else
+        throw except();
 }
