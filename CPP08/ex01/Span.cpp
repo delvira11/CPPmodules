@@ -10,6 +10,19 @@ Span::~Span()
 {
 }
 
+Span::Span(Span &copy)
+{
+    this->N = copy.N;
+    this->vec = copy.vec;
+}
+Span &Span::operator=(Span &copy)
+{
+    this->N = copy.N;
+    this->vec = copy.vec;
+    return *this;
+}
+
+
 void    Span::printVec()
 {
     for (std::vector<int>::iterator i = this->vec.begin(); i != this->vec.end(); i++)
