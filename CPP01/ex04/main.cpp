@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 16:55:26 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/24 16:55:27 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <iostream>
 #include <fstream>
 
@@ -24,7 +37,6 @@ int main(int nargs, char** args)
     s2 = args[3];
 
     nameout = name + ".replace";
-    std::ofstream fileout(nameout);
 
    filein.open(name);
     if (filein.is_open())
@@ -36,6 +48,12 @@ int main(int nargs, char** args)
             stringin.append("\n");
         }
     }
+    else
+    {
+        std::cout << "Error opening file" << std::endl;
+        return (0);
+    }
+    std::ofstream fileout(nameout);
     while (stringin[stringin.find(s1)] != '\0')
     {
     position = stringin.find(s1);
@@ -43,5 +61,6 @@ int main(int nargs, char** args)
     stringin.insert(position, s2);
     }
     fileout << stringin;
-    
+
+    return (0);
 }

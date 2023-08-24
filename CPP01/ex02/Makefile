@@ -18,7 +18,6 @@ $(NAME): $(OBJ)
 fclean:
 	rm -rf $(NAME)
 
-
 re: fclean all
 
 .PHONY:

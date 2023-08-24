@@ -1,5 +1,17 @@
-#include "Harl.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 16:55:33 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/24 16:55:34 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include "Harl.hpp"
 
 void Harl::debug( void )
 {
@@ -29,6 +41,7 @@ Harl::~Harl()
 }
 
 //retornoFuncion (NombreClase::*nombreVariablePunteroAMiembro)( argumentosFuncion );
+
 void    Harl::complain( std::string level )
 {
         std::string param = level;
@@ -56,15 +69,3 @@ void    Harl::complain( std::string level )
             i++;
         }
 }
-
-// void    Harl::complain(std::string level)
-// {
-//     if (level == "DEBUG")
-//         debug();
-//     else if (level == "INFO")
-//         info();
-//     else if (level == "WARNING")
-//         warning();
-//     else if (level == "ERROR")
-//         error();
-// }
