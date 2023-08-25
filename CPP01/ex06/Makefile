@@ -8,13 +8,8 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-
-##clean:
-##	rm -rf $(OBJ)
-
 fclean:
 	rm -rf $(NAME)
-
 
 re: fclean all
 
