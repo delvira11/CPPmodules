@@ -1,4 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:26:15 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/24 17:31:08 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <iostream>
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 class Fixed
 {
@@ -17,3 +33,5 @@ class Fixed
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& copy);
+
+#endif

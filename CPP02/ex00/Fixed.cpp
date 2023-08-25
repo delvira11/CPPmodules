@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:26:11 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/24 17:39:00 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -18,11 +31,10 @@ Fixed& Fixed::operator=(Fixed &copy)
     return(*this);
 }
 
-Fixed::Fixed( Fixed &copy )
+Fixed::Fixed(Fixed &copy)
 {
     std::cout << "Copy constructor called" << std::endl;
-
-    pointint = copy.getRawBits();
+    this->pointint = copy.getRawBits();
 }
 
 int Fixed::getRawBits( void )const
@@ -33,5 +45,5 @@ int Fixed::getRawBits( void )const
 
 void Fixed::setRawBits ( int const raw )
 {
-    pointint = raw;
+    this->pointint = raw;
 }

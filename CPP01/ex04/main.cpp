@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:55:26 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/24 16:55:27 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:02:12 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,16 @@ int main(int nargs, char** args)
         return (0);
     }
     std::ofstream fileout(nameout);
-    while (stringin[stringin.find(s1)] != '\0')
+    while (stringin[stringin.find(s1)] != '\0' && position >= 0)
     {
-    position = stringin.find(s1);
-    stringin.erase(position, s1.length());
-    stringin.insert(position, s2);
+        position = stringin.find(s1);
+        // std::cout << "hola" << std::endl;
+        // std::cout << "pos : "<< position << std::endl;
+        if (position >= 0)
+        {
+        stringin.erase(position, s1.length());
+        stringin.insert(position, s2);
+        }
     }
     fileout << stringin;
 
