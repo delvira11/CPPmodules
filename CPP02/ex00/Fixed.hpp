@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:26:15 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/24 17:31:08 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/28 14:37:33 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ class Fixed
 
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& copy);
+//std::ostream& operator<<(std::ostream& os, const Fixed& copy);
 
 #endif

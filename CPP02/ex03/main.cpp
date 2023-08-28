@@ -3,7 +3,10 @@
 
 int main()
 {
-    Point hola;
-    // Point ey ( hola );
-    // Point(0.5, 1.5);
+    Point x(0, 0);
+    Point y(3, 0);
+    Point z(2, 3);
+    Point pt(3, 2);
+
+    bsp(x, y, z, pt);
 }

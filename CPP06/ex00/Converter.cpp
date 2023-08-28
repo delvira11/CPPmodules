@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:29:40 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/03 19:04:16 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:31:37 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ std::string Converter::convertChar()
         return ("Non displayable");
     }
     a = var;
-    return (CharToString(a));
+    return ("\'" + CharToString(a) + "\'");
 }
 
 std::string Converter::convertInt()
@@ -167,7 +167,7 @@ std::string Converter::convertFloat()
 
 double stringToDouble(const std::string& str) {
     double result;
-    int numConverted = sscanf(str.c_str(), "%f", &result);
+    int numConverted = sscanf(str.c_str(), "%lf", &result);
     if (numConverted != 1)
     {
         throw Converter::IntOutRange();

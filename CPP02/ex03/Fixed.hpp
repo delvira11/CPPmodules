@@ -17,16 +17,15 @@ class Fixed
         Fixed( const float num);
         float   toFloat( void ) const;
         int     toInt( void ) const;
-        friend  std::ostream& operator<<(std::ostream& os, const Fixed& copy);
         ////// EX 02 //////
-        Fixed   operator*( const Fixed& other);
-        Fixed   operator+( const Fixed& other);
-        Fixed   operator-( const Fixed& other);
-        Fixed   operator/( const Fixed& other);
-        Fixed&   operator++();
-        Fixed   operator++(int);
-        Fixed&   operator--();
-        Fixed   operator--(int);
+        const Fixed   operator*( const Fixed& other) const;
+        const Fixed   operator+( const Fixed& other) const;
+        const Fixed   operator-( const Fixed& other) const;
+        const Fixed   operator/( const Fixed& other) const;
+        const Fixed&   operator++();
+        const Fixed   operator++(int);
+        const Fixed&   operator--();
+        const Fixed   operator--(int);
         bool    operator>(const Fixed& other) const;
         bool    operator<(const Fixed& other) const;
         bool    operator>=(const Fixed& other) const;
@@ -46,3 +45,4 @@ class Fixed
 
 };
 
+        std::ostream& operator<<(std::ostream& os, const Fixed& copy);

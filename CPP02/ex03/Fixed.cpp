@@ -124,7 +124,7 @@ std::ostream& operator<<(std::ostream& os, const Fixed& copy)
 
 ///////// EX02 //////////////////////
 
-Fixed Fixed::operator*( const Fixed &other)
+const Fixed Fixed::operator*( const Fixed &other) const
 {
     Fixed result;
 
@@ -134,7 +134,7 @@ Fixed Fixed::operator*( const Fixed &other)
 
     return (result);
 }
-Fixed Fixed::operator+( const Fixed &other)
+const Fixed Fixed::operator+( const Fixed &other) const
 {
     Fixed result;
 
@@ -144,7 +144,7 @@ Fixed Fixed::operator+( const Fixed &other)
 
     return (result);
 }
-Fixed Fixed::operator-( const Fixed &other)
+const Fixed Fixed::operator-( const Fixed &other) const
 {
     Fixed result;
 
@@ -154,7 +154,7 @@ Fixed Fixed::operator-( const Fixed &other)
 
     return (result);
 }
-Fixed Fixed::operator/( const Fixed &other)
+const Fixed Fixed::operator/( const Fixed &other)const
 {
     Fixed result;
 
@@ -166,14 +166,14 @@ Fixed Fixed::operator/( const Fixed &other)
      return (result);
 }
 
-Fixed& Fixed::operator++()
+const Fixed& Fixed::operator++()
 {
 
     this->pointint += 1;
     return (*this);
 }
 
-Fixed   Fixed::operator++(int)
+const Fixed   Fixed::operator++(int)
 {
     Fixed copy(*this);
 
@@ -182,14 +182,14 @@ Fixed   Fixed::operator++(int)
     return (copy);
 }
 
-Fixed& Fixed::operator--()
+const Fixed& Fixed::operator--()
 {
 
     this->pointint -= 1;
     return (*this);
 }
 
-Fixed   Fixed::operator--(int)
+const Fixed   Fixed::operator--(int)
 {
     Fixed copy(*this);
 

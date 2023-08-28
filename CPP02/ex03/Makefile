@@ -2,18 +2,18 @@ CC= c++
 NAME= point
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp Fixed.cpp Point.cpp bsp.cpp
-OBJ=$(SRC:.c=.o)
+##OBJ=$(SRC:.c=.o)
 
 
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 
-clean:
-	rm -rf $(OBJ)
+##clean:
+##	rm -rf $(OBJ)
 
 fclean:
 	rm -rf $(NAME)

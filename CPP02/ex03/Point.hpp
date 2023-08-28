@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:29:47 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/25 15:43:40 by delvira-         ###   ########.fr       */
+/*   Created: 2023/08/28 12:36:25 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 13:35:17 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
+#include "Fixed.hpp"
 
-int main(int nargs, char **args)
+class Point
 {
-    if (nargs != 2)
-    {
-        std::cout << "This program needs one argument" << std::endl;
-        return(0);
-    }
-    Converter   convert(args[1]);
+    private:
+        const Fixed x;
+        const Fixed y;
+    public:
+        Point();
+        Point(Fixed x, Fixed y);
+        ~Point();
+        Point(Point &copy);
+        Point operator=(Point copy);
 
-    convert.displayInfo();
-    
-}
+        const Fixed getX() const;
+        const Fixed getY() const;
+};
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
