@@ -19,6 +19,7 @@ int main()
     Fixed d(5.5f);
 
     std::cout << "result  = " << (c - d) << std::endl;
+    std::cout << "result  = " << (c / d) << std::endl;
     std::cout << "result  = " << (c > d) << std::endl;
     return 0;
 }

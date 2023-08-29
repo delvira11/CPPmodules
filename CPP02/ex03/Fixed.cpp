@@ -12,32 +12,32 @@ void printBits(unsigned int num) {
 Fixed::Fixed()
 {
     pointint = 0;
-    std::cout << "Default constructor called" << std::endl;
+    //std::cout << "Default constructor called" << std::endl;
 
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    //std::cout << "Destructor called" << std::endl;
 
 }
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-    std::cout << "Asignation operator called" << std::endl;
+    //std::cout << "Asignation operator called" << std::endl;
     this->pointint = copy.pointint;
     return(*this);
 }
 
 Fixed::Fixed( Fixed const &copy )
 {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "Copy constructor called" << std::endl;
     *this = copy;
 }
 
 int Fixed::getRawBits( void )const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    //std::cout << "getRawBits member function called" << std::endl;
     return (this->pointint);
 }
 
@@ -52,7 +52,7 @@ void Fixed::setRawBits ( int const raw )
 
 Fixed::Fixed( const int num)
 {
-    std::cout << "Int constructor called" << std::endl;
+    //std::cout << "Int constructor called" << std::endl;
     this->pointint = num;
     this->pointint = this->pointint << this->fracbits;
 
@@ -62,7 +62,7 @@ Fixed::Fixed( const int num)
 
 Fixed::Fixed( const float num)
 {
-    std::cout << "Float constructor called" << std::endl;
+    //std::cout << "Float constructor called" << std::endl;
     this->pointint = num;
 
     // MOVER 8 BITS LA PARTE ENTERA

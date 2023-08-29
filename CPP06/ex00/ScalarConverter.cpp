@@ -1,54 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Converter.cpp                                      :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:29:40 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/25 15:31:37 by delvira-         ###   ########.fr       */
+/*   Created: 2023/08/28 16:30:49 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 16:58:41 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
+#include "ScalarConverter.hpp"
 #include <sstream>
 
-Converter::Converter(std::string num) : number(num)
+// ScalarConverter::ScalarConverter(std::string num) : number(num)
+// {
+//     std::cout << "ScalarConverter constructor called" << std::endl;
+// }
+ScalarConverter::~ScalarConverter()
 {
-    std::cout << "Converter constructor called" << std::endl;
+    std::cout << "ScalarConverter destructor called" << std::endl;
 }
-Converter::~Converter()
+// ScalarConverter::ScalarConverter(ScalarConverter &copy)
+// {
+//     this->number = copy.number;
+// }
+// ScalarConverter & ScalarConverter::operator=(ScalarConverter &copy)
+// {
+//     this->number = copy.number;
+//     return *this;
+// }
+
+std::string ScalarConverter::getStrNum()
 {
-    std::cout << "Converter destructor called" << std::endl;
-}
-Converter::Converter(Converter &copy)
-{
-    this->number = copy.number;
-}
-Converter & Converter::operator=(Converter &copy)
-{
-    this->number = copy.number;
-    return *this;
+    return (ScalarConverter::number);
 }
 
-std::string Converter::getStrNum()
+void    ScalarConverter::displayInfo()
 {
-    return (this->number);
-}
-
-void    Converter::displayInfo()
-{
-    std::cout << "char: " << this->convertChar() << std::endl;
-    std::cout << "int: " << this->convertInt() << std::endl;
-    std::cout << "float: " << this->convertFloat() << std::endl;
-    std::cout << "double: " << this->convertDouble() << std::endl;
+    std::cout << "char: " << ScalarConverter::convertChar() << std::endl;
+    std::cout << "int: " << ScalarConverter::convertInt() << std::endl;
+    std::cout << "float: " << ScalarConverter::convertFloat() << std::endl;
+    std::cout << "double: " << ScalarConverter::convertDouble() << std::endl;
 }
 
 int StringToInt(const std::string& str) {
     std::istringstream iss(str);
     int result;
     if (!(iss >> result)) {
-        throw Converter::IntOutRange();
+        throw ScalarConverter::IntOutRange();
     }
     return result;
 }
@@ -58,14 +58,14 @@ std::string CharToString(char c) {
     return std::string(charArray);
 }
 
-std::string Converter::convertChar()
+std::string ScalarConverter::convertChar()
 {
     char    a;
     std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
     int var;
     try
     {
-        var = StringToInt(this->number);
+        var = StringToInt(ScalarConverter::number);
     }
     catch(std::exception& e)
     {
@@ -74,7 +74,7 @@ std::string Converter::convertChar()
 
     for (int i = 0; i < 4; i++)
     {
-        if (this->number == array[i])
+        if (ScalarConverter::number == array[i])
         {
             return ("impossible");
         }
@@ -88,13 +88,13 @@ std::string Converter::convertChar()
     return ("\'" + CharToString(a) + "\'");
 }
 
-std::string Converter::convertInt()
+std::string ScalarConverter::convertInt()
 {
     std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
     int var;
     try
     {
-        var = StringToInt(this->number);
+        var = StringToInt(ScalarConverter::number);
     }
     catch(std::exception& e)
     {
@@ -102,14 +102,14 @@ std::string Converter::convertInt()
     }
     for (int i = 0; i < 4; i++)
     {
-        if (this->number == array[i])
+        if (ScalarConverter::number == array[i])
         {
             return ("impossible");
         }
     }
     return (std::to_string(var));
 }
-const char *Converter::IntOutRange::what() const throw()
+const char *ScalarConverter::IntOutRange::what() const throw()
 {
     return ("impossible");
 }
@@ -120,25 +120,20 @@ float stringToFloat(const std::string& str) {
     int numConverted = sscanf(str.c_str(), "%f", &result);
     if (numConverted != 1)
     {
-        throw Converter::IntOutRange();
+        throw ScalarConverter::IntOutRange();
     }
     return result;
 }
 
-std::string Converter::convertFloat()
+std::string ScalarConverter::convertFloat()
 {
-    // std::stringstream ss(this->number);
-    // float num;
-    // ss >> num;
-
-    // Fixed fix(num);
     int var;
 
     std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
 
     for (int i = 0; i < 4; i++)
     {
-        if (this->number == array[i])
+        if (ScalarConverter::number == array[i])
         {
             return ("nanf");
         }
@@ -146,8 +141,8 @@ std::string Converter::convertFloat()
     float num;
     try
     {    
-        num = stringToFloat(this->number);
-        var = StringToInt(this->number);
+        num = stringToFloat(ScalarConverter::number);
+        var = StringToInt(ScalarConverter::number);
 
     }
     catch(std::exception &ex)
@@ -165,30 +160,27 @@ std::string Converter::convertFloat()
     return ("");
 }
 
-double stringToDouble(const std::string& str) {
+double stringToDouble(const std::string& str)
+{
     double result;
     int numConverted = sscanf(str.c_str(), "%lf", &result);
     if (numConverted != 1)
     {
-        throw Converter::IntOutRange();
+        throw ScalarConverter::IntOutRange();
     }
     return result;
 }
 
-std::string Converter::convertDouble()
+std::string ScalarConverter::convertDouble()
 {
-    // std::stringstream ss(this->number);
-    // float num;
-    // ss >> num;
 
-    // Fixed fix(num);
     int var;
 
     std::string array[4] = {"-inff", "+inff", "nanf", "nan"};
 
     for (int i = 0; i < 4; i++)
     {
-        if (this->number == array[i])
+        if (ScalarConverter::number == array[i])
         {
             return ("nanf");
         }
@@ -196,8 +188,8 @@ std::string Converter::convertDouble()
     double num;
     try
     {    
-        num = stringToDouble(this->number);
-        var = StringToInt(this->number);
+        num = stringToDouble(ScalarConverter::number);
+        var = StringToInt(ScalarConverter::number);
 
     }
     catch(std::exception &ex)

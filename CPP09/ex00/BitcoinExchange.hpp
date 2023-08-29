@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 19:46:24 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 19:46:25 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -38,6 +51,11 @@ class BitcoinExchange
                 const char *what() const throw();
         };
         class LargeNumber : public std::exception
+        {
+            public :
+                const char *what() const throw();
+        };
+        class InputError : public std::exception
         {
             public :
                 const char *what() const throw();

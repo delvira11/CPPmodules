@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:26:15 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 14:37:33 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:15:35 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Fixed
         Fixed();
         ~Fixed();
         Fixed( Fixed &copy );
-        /////////
         Fixed& operator=(Fixed &copy);
+        //////////////////////////////
         int getRawBits( void )const;
         void setRawBits ( int const raw );
 

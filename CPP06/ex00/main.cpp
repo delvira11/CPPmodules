@@ -6,11 +6,11 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 12:29:47 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/25 15:43:40 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/28 16:46:36 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Converter.hpp"
+#include "ScalarConverter.hpp"
 
 int main(int nargs, char **args)
 {
@@ -19,8 +19,8 @@ int main(int nargs, char **args)
         std::cout << "This program needs one argument" << std::endl;
         return(0);
     }
-    Converter   convert(args[1]);
-
-    convert.displayInfo();
+    //ScalarConverter   convert(args[1]);
+    ScalarConverter::number = (std::string(args[1]));
+    ScalarConverter::displayInfo();
     
 }

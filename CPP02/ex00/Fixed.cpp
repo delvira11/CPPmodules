@@ -6,10 +6,9 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:26:11 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 14:43:06 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:24:51 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Fixed.hpp"
 
@@ -26,7 +25,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(Fixed &copy)
 {
-    std::cout << "Asignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     this->pointint = copy.getRawBits();
     return(*this);
 }

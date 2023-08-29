@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 19:46:32 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 19:46:33 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "BitcoinExchange.hpp"
 #include <iostream>
 #include <string>
@@ -181,6 +194,53 @@ void    parse_line(std::string line)
     }
 }
 
+
+bool    isnum(char n)
+{
+    if (n >= '0' && n <= '9')
+        return true;
+    else
+        return false;
+}
+
+void    parseInput(std::string input)
+{
+    std::ifstream data_file(input);
+    if (!data_file.is_open())
+    {
+        std::cout << "Error opening file" << std::endl;
+        exit(1);
+    }
+    std::string line;
+
+    std::getline(data_file, line);
+    if (line != "date | value")
+        throw BitcoinExchange::InputError();
+    while (std::getline(data_file, line))
+    {
+       for (int i = 0; i < 4; i++)
+       {
+            if(isnum(line[i]) == false)
+                throw BitcoinExchange::InputError();
+       }
+       if (line[4] != '-')
+            throw BitcoinExchange::InputError();
+       for (int i = 5; i < 7; i++)
+       {
+            if(isnum(line[i]) == false)
+                throw BitcoinExchange::InputError();
+       } 
+       if (line[7] != '-')
+            throw BitcoinExchange::InputError();       
+       for (int i = 8; i < 10; i++)
+       {
+            if(isnum(line[i]) == false)
+                throw BitcoinExchange::InputError();
+       } 
+
+    }
+}
+
 int main(int nargs, char **args)
 {
     if (nargs != 2)
@@ -190,6 +250,15 @@ int main(int nargs, char **args)
         return (0);
     }
 
+    try
+    {
+        parseInput(std::string(args[1]));
+    }
+    catch (std::exception &ex)
+    {
+        std::cout << ex.what() << std::endl;
+        return (1);
+    }
     std::vector<BitcoinExchange> data;
     std::ifstream data_file("data.csv");
     std::ifstream infile(args[1]);

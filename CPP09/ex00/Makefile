@@ -8,7 +8,7 @@ OBJ=$(SRC:.c=.o)
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Converter.hpp                                      :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 12:29:42 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/03 18:39:04 by delvira-         ###   ########.fr       */
+/*   Created: 2023/08/28 16:21:42 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 16:47:30 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,24 @@
 
 class Fixed;
 
-class Converter
+class ScalarConverter
 {
     
     private:
-        std::string number;
     public:
-        Converter(std::string num);
-        Converter(Converter &copy);
-        Converter &operator=(Converter &copy);
-        ~Converter();
+        // ScalarConverter(std::string num);
+        // ScalarConverter(ScalarConverter &copy);
+        // ScalarConverter &operator=(ScalarConverter &copy);
+        ~ScalarConverter();
 
-        std::string getStrNum();
-        
-        std::string convertChar();
-        std::string convertInt();
-        std::string convertFloat();
-        std::string convertDouble();
+        static std::string number;
+        static std::string getStrNum(); 
+        static std::string convertChar();
+        static std::string convertInt();
+        static std::string convertFloat();
+        static std::string convertDouble();
 
-        void    displayInfo();
+        static void    displayInfo();
 
         class IntOutRange : public std::exception
         {

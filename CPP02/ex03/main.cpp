@@ -1,12 +1,36 @@
 #include "Point.hpp"
 
 
-int main()
+int main(int nargs, char **args)
 {
-    Point x(0, 0);
+    if (nargs != 1)
+    {
+        std::cout << "This program doesn't need arguments" << std::endl;
+        return (0);
+    }
+    (void)args;
+
+
+    bool result;
+
+    // POINT IS INSIDE
+
+    Point x(0, 0);  
     Point y(3, 0);
     Point z(2, 3);
-    Point pt(3, 2);
+    Point pt(2, 1);
 
-    bsp(x, y, z, pt);
+    result = bsp(x, y, z, pt);
+    std::cout << result << std::endl;
+
+
+    // POINT IS OUTSIDE
+
+    Point a(0, 0);  
+    Point b(3, 0);
+    Point c(2, 3);
+    Point pt2(4, 4);
+
+    result = bsp(a, b, c, pt2);
+    std::cout << result << std::endl;
 }

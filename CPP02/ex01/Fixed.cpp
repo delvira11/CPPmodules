@@ -15,7 +15,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(const Fixed &copy)
 {
-    std::cout << "Asignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     this->pointint = copy.pointint;
     return(*this);
 }

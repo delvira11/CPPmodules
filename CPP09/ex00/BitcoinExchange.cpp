@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/28 19:46:17 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/28 19:46:20 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange()
@@ -118,4 +130,9 @@ const char *BitcoinExchange::BadDate::what() const throw()
 const char *BitcoinExchange::LargeNumber::what() const throw()
 {
     return ("Error: too large a number.");
+}
+
+const char *BitcoinExchange::InputError::what() const throw()
+{
+    return ("Error: Input file not formated");
 }

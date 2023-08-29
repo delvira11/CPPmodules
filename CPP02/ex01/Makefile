@@ -1,8 +1,7 @@
 CC= c++
 NAME= fixed
-CFLAGS= -Wall -Wextra  -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp Fixed.cpp
-##OBJ=$(SRC:.c=.o)
 
 
 all: $(NAME)
@@ -11,9 +10,6 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-
-##clean:
-##	rm -rf $(OBJ)
 
 fclean:
 	rm -rf $(NAME)
