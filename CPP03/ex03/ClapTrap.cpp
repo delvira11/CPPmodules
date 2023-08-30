@@ -3,19 +3,12 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "ClapTrap Default constructor called" << std::endl;
-    this->name = "";
-    this->hitPoints = 100;
-    this->energyPoints = 50;
-    this->attackDamage = 20;
 }
 
 ClapTrap::ClapTrap( std::string nameparam )
 {
     std::cout << "ClapTrap name Constructor called" << std::endl;
     this->name = nameparam;
-    this->hitPoints = 100;
-    this->energyPoints = 50;
-    this->attackDamage = 20;
 }
 
 ClapTrap::~ClapTrap()

@@ -1,19 +1,15 @@
 CC= c++
 NAME= flagTrap
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CFLAGS= -Wall -Wextra -Werror -std=c++98 -Wshadow
 SRC= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-OBJ=$(SRC:.c=.o)
 
 
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-
-clean:
-	rm -rf $(OBJ)
 
 fclean:
 	rm -rf $(NAME)

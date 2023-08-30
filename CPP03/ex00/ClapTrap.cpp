@@ -26,7 +26,10 @@ std::cout << "Destructor called" << std::endl;
 ClapTrap::ClapTrap( ClapTrap& copy)
 {
     std::cout << "Copy constructor called" << std::endl;
-    *this = copy;
+    this->hitPoints = copy.hitPoints;
+    this->energyPoints = copy.energyPoints;
+    this->attackDamage = copy.attackDamage;
+    this->name = copy.name;
 }
 
 ClapTrap&  ClapTrap::operator=(ClapTrap &copy)
