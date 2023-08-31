@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 17:18:20 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/31 19:55:08 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Dog.hpp"
 
 Dog::Dog() : Animal()
@@ -10,6 +23,7 @@ Dog::Dog() : Animal()
 Dog::Dog(Dog &copy) : Animal(copy)
 {
     std::cout << "Dog copy constructor called" << std::endl;
+    this->brain = new Brain();
     *this = copy;
 }
 
@@ -23,7 +37,7 @@ Dog &Dog::operator=(Dog &copy)
 {
     std::cout << "Dog assignment operator called" << std::endl;
     this->type = copy.type;
-    this->brain = copy.brain;
+    *this->brain = *copy.brain;
     return *this;
 }
 

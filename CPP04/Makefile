@@ -1,9 +1,11 @@
 CC= c++
-NAME= animal
+NAME= interface
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRC= main.cpp AMateria.cpp
+
 
 all: $(NAME)
+
 
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)

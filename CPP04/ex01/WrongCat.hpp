@@ -1,4 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 16:56:59 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/31 16:58:11 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
+
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 class WrongCat : public WrongAnimal {
 
@@ -13,3 +28,5 @@ class WrongCat : public WrongAnimal {
         void makeSound() const;
 
 };
+
+#endif

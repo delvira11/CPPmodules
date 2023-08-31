@@ -31,5 +31,5 @@ int main()
         delete animalArray[i];
         i++;
     }
-    system("leaks -q brain");
+
 }

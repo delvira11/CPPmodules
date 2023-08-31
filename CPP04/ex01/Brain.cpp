@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 16:53:59 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/31 19:50:25 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Brain.hpp"
 
 Brain::Brain()
@@ -19,5 +32,9 @@ Brain::~Brain()
 Brain &Brain::operator=(Brain &copy)
 {
     std::cout << "Brain assignment operator called" << std::endl;
-    return copy;
+    for (int i = 0; i < 100; i++)
+    {
+        this->ideas[i] = copy.ideas[i];
+    }
+    return *this;
 }

@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 16:50:26 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/31 16:50:27 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
@@ -17,4 +30,11 @@ int main()
     meta->makeSound();
     wronganimal->makeSound();
     wrongcat->makeSound();
+
+    delete meta;
+    delete j;
+    delete i;
+    delete wronganimal;
+    delete wrongcat;
+
 }

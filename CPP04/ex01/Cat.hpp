@@ -1,4 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 16:54:37 by delvira-          #+#    #+#             */
+/*   Updated: 2023/08/31 16:54:56 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "Dog.hpp"
+
+#ifndef CAT_HPP
+#define CAT_HPP
 
 class Cat : public Animal {
 
@@ -15,3 +31,5 @@ class Cat : public Animal {
         void makeSound() const;
 
 };
+
+#endif
