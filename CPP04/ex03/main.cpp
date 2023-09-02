@@ -11,10 +11,13 @@
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
-/*
+
 IMateriaSource* src = new MateriaSource();
 src->learnMateria(new Ice());
 src->learnMateria(new Cure());
@@ -30,5 +33,5 @@ me->use(1, *bob);
 delete bob;
 delete me;
 delete src;
-return 0;*/
+return 0;
 }

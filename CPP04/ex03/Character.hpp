@@ -1,7 +1,10 @@
-#include "ICharacter.hpp"
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
+
+#include <iostream>
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
@@ -10,7 +13,7 @@ class Character : public ICharacter
         AMateria    *inventory[4];
 
     public:
-        Character(std::string &name);
+        Character(std::string const &name);
         Character(Character &copy);
         ~Character();
         Character&          operator=(Character &copy);

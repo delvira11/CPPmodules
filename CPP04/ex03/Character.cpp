@@ -1,6 +1,6 @@
 #include "Character.hpp"
 
-Character::Character(std::string &name)
+Character::Character(std::string const &name)
 {
     std::cout << "Character name constructor called" << std::endl;
     this->name = name;
