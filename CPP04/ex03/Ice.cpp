@@ -13,6 +13,8 @@
 #include "Ice.hpp"
 #include <iostream>
 
+class ICharacter;
+
 Ice::Ice() : AMateria("ice")
 {
     std::cout << "Ice base constructor called" << std::endl;
@@ -24,4 +26,11 @@ Ice::~Ice()
 AMateria* Ice::clone() const
 {
     return (AMateria *)this;
+}
+
+
+
+void    Ice::use(ICharacter& target)
+{
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

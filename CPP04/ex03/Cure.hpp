@@ -12,11 +12,18 @@
 
 #include "Ice.hpp"
 
+#ifndef CURE_HPP
+#define CURE_HPP
+
 class Cure : public AMateria
 {
     public: 
     Cure();
-    ~Cure();    
-    AMateria* clone() const;
+    ~Cure();
+
+    virtual AMateria* clone() const;
+    virtual void    use(ICharacter& target);
 
 };
+
+#endif
