@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 17:18:23 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/01 18:23:25 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/04 16:12:04 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Ice : public AMateria
 {
     public: 
     Ice();
+    Ice(Ice &copy);
+    Ice &operator=(Ice &copy);
     ~Ice();
 
     virtual AMateria* clone() const;

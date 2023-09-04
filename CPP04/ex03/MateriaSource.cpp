@@ -30,6 +30,10 @@ MateriaSource &MateriaSource::operator=(MateriaSource &copy)
 MateriaSource::~MateriaSource()
 {
     std::cout << "MateriaSource destructor called" << std::endl;
+    for (int i = 0; i < 4;i++)
+    {
+        delete this->materias[i];
+    }
 }
 
 void MateriaSource::learnMateria(AMateria*materia)

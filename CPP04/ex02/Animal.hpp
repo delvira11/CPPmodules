@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 17:15:52 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/31 17:16:17 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/05 00:17:04 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@
         
         protected:
             std::string type;
-            Animal();
-            Animal(Animal &copy);
 
         public:
+            Animal();
+            Animal(Animal &copy);
             virtual ~Animal();
             Animal &operator=(Animal &copy);
 
             std::string getType() const;
-            virtual void makeSound() const;
+            virtual void makeSound() const = 0;
 
     };
 

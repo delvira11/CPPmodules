@@ -1,5 +1,4 @@
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 int main()
 {
@@ -31,5 +30,16 @@ int main()
         delete animalArray[i];
         i++;
     }
+
+    std::cout << "-------------------------------" << std::endl;
+
+    Cat Basic;
+    std::cout << "-------------------------------" << std::endl;
+
+    Cat tmp = Basic;
+    std::cout << "-------------------------------" << std::endl;
+    Cat *d = new Cat(); 
+    Animal *b = d;
+    delete b;
 
 }

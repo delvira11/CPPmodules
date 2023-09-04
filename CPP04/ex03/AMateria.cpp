@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 17:05:04 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/01 18:31:47 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/04 16:05:30 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 AMateria::AMateria(std::string const & type) : type(type)
 {
     std::cout << "AMateria base constructor called" << std::endl;
+}
+
+AMateria::AMateria(AMateria &copy)
+{
+    this->type = copy.type;
+}
+AMateria & AMateria::operator=(AMateria &copy)
+{
+    this->type = copy.type;
+    return *this;
 }
 
 AMateria::~AMateria()

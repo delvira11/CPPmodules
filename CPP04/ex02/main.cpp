@@ -6,13 +6,12 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 17:18:46 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/31 17:22:46 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/05 00:20:45 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 int main(int nargs, char **args)
 {

@@ -1,7 +1,7 @@
 CC= c++
 NAME= abstractclass
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 
 all: $(NAME)

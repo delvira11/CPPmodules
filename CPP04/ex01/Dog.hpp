@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:55:41 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/31 16:55:57 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/04 20:12:00 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-class Dog : public Animal {
+class Dog : public Animal
+{
 
     private:
         Brain *brain;
