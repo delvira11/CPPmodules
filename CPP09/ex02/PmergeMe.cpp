@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:25:59 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/06 19:23:10 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:13:19 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,10 +178,92 @@ void    PmergeMe::vector_algorithm()
 
     this->order_pairs();
     this->order_highest_pairs();
-    this->split_into_vecs();
+    // this->split_into_vecs();
 
     
     for (std::vector<int>::iterator it = this->vec.begin(); it != this->vec.end(); ++it)
+    {
+        std::cout << *it << std::endl;
+    } 
+}
+
+///////// LIST FUNCTIONS //////////////
+
+
+
+
+void PmergeMe::l_order_pairs()
+{
+std::list<int>::iterator itr = this->lst.begin();
+int i = 0;
+
+while (itr != std::prev(this->lst.end()))
+{
+    if (*itr < *std::next(itr) && (i % 2 == 0))
+    {
+        int temp = *itr;
+        *itr = *std::next(itr);
+        *std::next(itr) = temp;
+    }
+    
+    ++itr;
+    ++i;
+        
+}
+}
+
+
+void PmergeMe::l_order_highest_pairs()
+{
+    std::list<int>::iterator itr = this->lst.begin();
+    int i = 0;
+    int aux;
+    int aux2;
+    int save_num = 0;
+
+    // Condition if the vector is not odd
+
+    if ((this->N % 2) != 0)
+    {
+        save_num = *(--this->lst.end());
+        this->lst.pop_back();
+    }
+
+    while (*itr != *(--this->lst.end()))
+    {
+        if ((i % 2 == 0) && (*itr > *(itr + 2) && (itr + 2) < this->lst.end()))
+        {
+
+            aux = *itr;
+            aux2 = *(itr + 1);
+            *itr = *(itr + 2);
+            *(itr + 1) = *(itr + 3);
+            *(itr + 2) = aux;
+            *(itr + 3) = aux2;
+            itr = this->lst.begin();
+            i = 0;
+        }
+        else
+        {
+            i++;
+            itr++;
+        }
+    }
+
+    // Add the number back to the vector
+    if ((this->N % 2) != 0)
+        this->lst.push_back(save_num);
+}
+
+void    PmergeMe::list_algorithm()
+{
+
+    this->l_order_pairs();
+    this->l_order_highest_pairs();
+    // this->split_into_vecs();
+
+    
+    for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
     {
         std::cout << *it << std::endl;
     } 

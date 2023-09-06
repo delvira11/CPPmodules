@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:30:56 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/06 19:31:44 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/06 19:44:58 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,6 @@ int main(int nargs, char **args)
     }
     PmergeMe    data(args);
     data.vector_algorithm();
+    std::cout << "------" << std::endl;
+    data.list_algorithm();
 }
