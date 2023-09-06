@@ -1,5 +1,5 @@
 CC= c++	
-NAME= RPN
+NAME= PmergeMe
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp PmergeMe.cpp
 

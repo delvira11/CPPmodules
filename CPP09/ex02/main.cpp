@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:30:56 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/05 16:33:12 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/06 19:31:44 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int main(int nargs, char **args)
 {
-    if (nargs != 1)
+    if (nargs == 0)
     {
-        std::cout << "This program needs one argument" << std::endl;
+        std::cout << "This program needs arguments" << std::endl;
         return (1);
     }
-    
+    PmergeMe    data(args);
+    data.vector_algorithm();
 }
