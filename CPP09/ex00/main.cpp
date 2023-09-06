@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:46:32 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 19:46:33 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/06 14:14:02 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <vector>
+#include <deque>
 #include <ctime>
 #include <cstdio>
 
@@ -259,7 +259,7 @@ int main(int nargs, char **args)
         std::cout << ex.what() << std::endl;
         return (1);
     }
-    std::vector<BitcoinExchange> data;
+    std::deque<BitcoinExchange> data;
     std::ifstream data_file("data.csv");
     std::ifstream infile(args[1]);
     std::string line;
@@ -292,7 +292,7 @@ int main(int nargs, char **args)
         //std::cout << "date: " << in_date << std::endl;
 
         float prev_value = 0;
-        for (std::vector<BitcoinExchange>::iterator i = data.begin(); i < data.end(); i++)
+        for (std::deque<BitcoinExchange>::iterator i = data.begin(); i < data.end(); i++)
         {
             if (isDateOlder(in_date,"2009-01-02") < 0)
                 prev_value = 0;
