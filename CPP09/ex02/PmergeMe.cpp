@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:25:59 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/06 20:13:19 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:12:55 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,10 @@ while (itr != std::prev(this->lst.end()))
 void PmergeMe::l_order_highest_pairs()
 {
     std::list<int>::iterator itr = this->lst.begin();
+    std::list<int>::iterator itr1 = this->lst.begin();
+    std::list<int>::iterator itr2 = this->lst.begin();
+    std::list<int>::iterator itr3 = this->lst.begin();
+    int len = this->N;
     int i = 0;
     int aux;
     int aux2;
@@ -227,26 +231,41 @@ void PmergeMe::l_order_highest_pairs()
     {
         save_num = *(--this->lst.end());
         this->lst.pop_back();
+        len -= 1;
     }
 
-    while (*itr != *(--this->lst.end()))
+
+    while (i < (len - 3))
     {
-        if ((i % 2 == 0) && (*itr > *(itr + 2) && (itr + 2) < this->lst.end()))
+    itr1 = itr;
+    itr2 = itr;
+    itr3 = itr;    
+    std::advance(itr1, 1);
+    std::advance(itr2, 2);
+    std::advance(itr3, 3);
+    // std::cout << "itr: " << *itr << std::endl;
+    // std::cout << "itr1: " << *itr1 << std::endl;
+    // std::cout << "itr2: " << *itr2 << std::endl;
+    // std::cout << "itr3: " << *itr3 << std::endl;
+        if ((i % 2 == 0) && (*(itr) > *(itr2)))
         {
 
             aux = *itr;
-            aux2 = *(itr + 1);
-            *itr = *(itr + 2);
-            *(itr + 1) = *(itr + 3);
-            *(itr + 2) = aux;
-            *(itr + 3) = aux2;
+            aux2 = *(itr1);
+            *itr = *(itr2);
+            *(itr1) = *(itr3);
+            *(itr2) = aux;
+            *(itr3) = aux2;
             itr = this->lst.begin();
+            itr1 = this->lst.begin();
+            itr2 = this->lst.begin();
+            itr3 = this->lst.begin();
             i = 0;
         }
         else
         {
+            std::advance(itr, 1);
             i++;
-            itr++;
         }
     }
 
@@ -260,11 +279,11 @@ void    PmergeMe::list_algorithm()
 
     this->l_order_pairs();
     this->l_order_highest_pairs();
-    // this->split_into_vecs();
-
-    
     for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
     {
         std::cout << *it << std::endl;
     } 
+    // this->split_into_vecs();
+
+    
 }
