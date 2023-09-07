@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:31:00 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/06 20:00:38 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:03:49 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ class PmergeMe
         PmergeMe(char **args);
         ~PmergeMe();
 
+
+        int get_N();
+        void print_data();
         //Vector functions
+        
+
+
         void vector_algorithm();
         void order_pairs();
         void order_highest_pairs();
@@ -40,7 +46,7 @@ class PmergeMe
         void list_algorithm();
         void l_order_pairs();
         void l_order_highest_pairs();
-        // void l_split_into_vecs();
+        void l_split_into_vecs();
 
 
 

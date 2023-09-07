@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:25:59 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/07 15:12:55 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/07 16:14:01 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,29 @@ PmergeMe::PmergeMe(char **args)
 PmergeMe::~PmergeMe()
 {
     std::cout << "PmergeMe destructor called" << std::endl;
+}
+
+int PmergeMe::get_N()
+{
+    return (this->N);
+}
+
+void PmergeMe::print_data()
+{
+    std::vector<int> sorted_vec;
+    
+    std::cout << "After : "; 
+
+    for (std::vector<int>::iterator it = this->vec.begin(); it != this->vec.end(); ++it)
+    {
+        sorted_vec.push_back(*it);
+    } 
+    std::sort(sorted_vec.begin(), sorted_vec.end());
+    for (std::vector<int>::iterator it = sorted_vec.begin(); it != sorted_vec.end(); ++it)
+    {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
 }
 
 
@@ -178,13 +201,13 @@ void    PmergeMe::vector_algorithm()
 
     this->order_pairs();
     this->order_highest_pairs();
-    // this->split_into_vecs();
+    this->split_into_vecs();
 
     
-    for (std::vector<int>::iterator it = this->vec.begin(); it != this->vec.end(); ++it)
-    {
-        std::cout << *it << std::endl;
-    } 
+    // for (std::vector<int>::iterator it = this->vec.begin(); it != this->vec.end(); ++it)
+    // {
+    //     std::cout << *it << std::endl;
+    // } 
 }
 
 ///////// LIST FUNCTIONS //////////////
@@ -243,10 +266,6 @@ void PmergeMe::l_order_highest_pairs()
     std::advance(itr1, 1);
     std::advance(itr2, 2);
     std::advance(itr3, 3);
-    // std::cout << "itr: " << *itr << std::endl;
-    // std::cout << "itr1: " << *itr1 << std::endl;
-    // std::cout << "itr2: " << *itr2 << std::endl;
-    // std::cout << "itr3: " << *itr3 << std::endl;
         if ((i % 2 == 0) && (*(itr) > *(itr2)))
         {
 
@@ -256,6 +275,8 @@ void PmergeMe::l_order_highest_pairs()
             *(itr1) = *(itr3);
             *(itr2) = aux;
             *(itr3) = aux2;
+
+
             itr = this->lst.begin();
             itr1 = this->lst.begin();
             itr2 = this->lst.begin();
@@ -274,16 +295,83 @@ void PmergeMe::l_order_highest_pairs()
         this->lst.push_back(save_num);
 }
 
+void l_insert_first_num(std::list<int> *main, std::list<int> *sub)
+{
+    main->insert(main->begin(), *(sub->begin()));
+    sub->erase(sub->begin());
+}
+
+void l_insert_sub_vector(std::list<int> *main, std::list<int> *sub)
+{
+    while (!sub->empty())
+    {
+    std::list<int>::iterator it = main->begin();
+
+        while (it != main->end() && *it < *(sub->begin()))
+        {
+            it++;
+        }
+
+        main->insert(it, *(sub->begin()));
+        sub->erase(sub->begin());
+    }  
+}
+
+void PmergeMe::l_split_into_vecs()
+{
+    std::list<int> main_list;
+    std::list<int> sub_list;
+    int i = 0;
+    int save_num = 0;
+
+
+    if ((this->N % 2) != 0)
+    {
+        save_num = *(--this->lst.end());
+        this->lst.pop_back();
+        // len -= 1;
+    }
+
+    for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
+    {
+        if ((i % 2) == 0)
+            main_list.push_back(*it);
+        else
+            sub_list.push_back(*it);
+        i++;
+    }
+
+    if ((this->N % 2) != 0)
+        sub_list.push_back(save_num);
+
+
+    l_insert_first_num(&main_list, &sub_list);
+    l_insert_sub_vector(&main_list, &sub_list);
+
+    this->lst = main_list;
+
+    // std::cout << "Main vec -------------" << std::endl; 
+    // for (std::list<int>::iterator it = main_list.begin(); it != main_list.end(); ++it)
+    // {
+    //     std::cout << *it << std::endl;
+    // }     
+    // std::cout << "Sub vec -------------" << std::endl; 
+    // for (std::list<int>::iterator it = sub_list.begin(); it != sub_list.end(); ++it)
+    // {
+    //     std::cout << *it << std::endl;
+    // } 
+    
+}
+
 void    PmergeMe::list_algorithm()
 {
 
     this->l_order_pairs();
     this->l_order_highest_pairs();
-    for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
-    {
-        std::cout << *it << std::endl;
-    } 
-    // this->split_into_vecs();
+    this->l_split_into_vecs();
+    // for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
+    // {
+    //     std::cout << *it << std::endl;
+    // } 
 
-    
 }
