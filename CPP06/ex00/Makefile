@@ -1,7 +1,7 @@
 CC= c++
 NAME= cast
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp ScalarConverter.cpp Fixed.cpp
+SRC= main.cpp ScalarConverter.cpp
 ##OBJ=$(SRC:.c=.o)
 
 
