@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 16:30:49 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/08 20:00:07 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/08 20:03:32 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 ScalarConverter::~ScalarConverter()
 {
-    
+    std::cout << "ScalarConverter destructor called" << std::endl;
 }
 bool isChar(const std::string& str)
 {
@@ -124,6 +124,7 @@ std::string    get_type(std::string str)
 
 ScalarConverter::ScalarConverter()
 {
+    std::cout << "ScalarConverter constructor called" << std::endl;
 }
 
 char stringToChar(const std::string& str)
@@ -274,6 +275,4 @@ void ScalarConverter::print_nums(std::string input)
             ptr_array[i](input);
         }
     }
-
-    
 }
