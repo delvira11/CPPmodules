@@ -1,3 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:30:08 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:30:10 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#ifndef FORM_HPP
+#define FORM_HPP
+
 #include <iostream>
 #include "Bureaucrat.hpp"
 
@@ -20,7 +36,6 @@ class Form
         bool                getFilled();
         int                 getGrade_sign();
         int                 getGrade_exec();
-        friend std::ostream& operator<<(std::ostream& os, Form& copy);
         void                beSigned(Bureaucrat &bureaucrat);
 
 
@@ -35,3 +50,7 @@ class Form
             const char *what() const throw();
     };
 };
+
+std::ostream& operator<<(std::ostream& os, Form& copy);
+
+#endif

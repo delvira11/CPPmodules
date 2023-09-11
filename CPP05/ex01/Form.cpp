@@ -1,5 +1,17 @@
-#include "Form.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:30:04 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:30:05 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include "Form.hpp"
 
 Form::Form(std::string const name) : name(name), filled(false), grade_sign(1), grade_exec(1)
 {
@@ -65,10 +77,12 @@ std::ostream& operator<<(std::ostream& os, Form& copy)
 
 void    Form::beSigned(Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() <= this->getGrade_sign())
-    {
-        this->filled = true;
-    }
-    else
-        throw Bureaucrat::GradeTooLowException();
+        if (bureaucrat.getGrade() <= this->getGrade_sign())
+        {
+            this->filled = true;
+        }
+        else
+            throw Form::GradeTooLowException();
+
+    
 }

@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:05:47 by delvira-          #+#    #+#             */
-/*   Updated: 2023/07/24 19:00:49 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:42:22 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 int main()
 {
-    Form jacob("Jacob");
+    Form foorm("foooorm");
+    std::cout << foorm;
 
-//    std::cout << jacob.getGrade_sign() << std::endl;
+
     Bureaucrat john("John", 5);
-  //  std::cout << john.getGrade() << std::endl;
+    Bureaucrat jaaax("Jaaax", 1);
+    std::cout << john;
+    std::cout << jaaax;
+    
+    try
+    {
+      john.signForm(foorm);
+      jaaax.signForm(foorm);
+      foorm.beSigned(john);
+    }
+    catch(std::exception& ex)
+    {
+      std::cerr << ex.what() << std::endl;
+    }
     
 
-    john.signForm(jacob);
 }

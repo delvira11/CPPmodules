@@ -1,6 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:31:19 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:31:20 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <iostream>
 #include "Bureaucrat.hpp"
 
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 class AForm
 {
@@ -14,13 +29,12 @@ class AForm
         AForm(std::string const name, int grade_sign, int grade_exec);
         AForm(AForm &copy);
         AForm &operator=(AForm &copy);
-        ~AForm();
+        virtual ~AForm();
 
         std::string const   getName() const;
         bool                getFilled() const;
         int                 getGrade_sign();
         int                 getGrade_exec() const;
-        friend std::ostream& operator<<(std::ostream& os, AForm& copy);
         void                beSigned(Bureaucrat &bureaucrat);
 
         virtual void    execute(Bureaucrat const & executor) const = 0;
@@ -41,3 +55,6 @@ class AForm
             virtual const char *what() const throw();
     };
 };
+    std::ostream& operator<<(std::ostream& os, AForm& copy);
+
+#endif

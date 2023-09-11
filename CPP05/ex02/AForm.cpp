@@ -1,5 +1,17 @@
-#include "AForm.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:30:21 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:30:22 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+
+#include "AForm.hpp"
 
 AForm::AForm(std::string const name, int grade_sign, int grade_exec) : name(name), filled(false), grade_sign(grade_sign), grade_exec(grade_exec)
 {

@@ -1,3 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:29:44 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:29:45 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <exception>
 
@@ -18,7 +35,6 @@ class Bureaucrat
         int                 getGrade();
         void                incrementGrade();
         void                decrementGrade();
-        friend std::ostream& operator<<(std::ostream& os, Bureaucrat& obj);
 
     class GradeTooHighException : public std::exception
     {
@@ -32,3 +48,7 @@ class Bureaucrat
     };
     
 };
+    
+std::ostream& operator<<(std::ostream& os, Bureaucrat& obj);
+
+#endif

@@ -1,3 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 19:29:58 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/11 19:29:59 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <exception>
 
@@ -20,7 +36,6 @@ class Bureaucrat
         int                 getGrade();
         void                incrementGrade();
         void                decrementGrade();
-        friend std::ostream& operator<<(std::ostream& os, Bureaucrat& copy);
 
         void                signForm(Form &form);
 
@@ -36,3 +51,7 @@ class Bureaucrat
     };
     
 };
+
+    std::ostream& operator<<(std::ostream& os, Bureaucrat& copy);
+
+#endif
