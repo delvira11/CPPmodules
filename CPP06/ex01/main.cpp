@@ -5,13 +5,21 @@
 
 int main()
 {
-    Data *stc;
+    Data *stc = new(Data);
+    Data *testss;
     uintptr_t test;
 
     stc[0].a = 10;
     stc[0].b = 'b';
     std::cout << stc->a << std::endl;
     std::cout << stc->b << std::endl;
-    //Serializer::serialize(stc);
+
+    std::cout << "first variable " << stc << std::endl;
+    test = Serializer::serialize(stc);
+    std::cout << "Serialized to uint " << test << std::endl;
+    testss = Serializer::deserialize(test);
+    std::cout << testss << std::endl;
+    std::cout << "deserialized to data " << testss << std::endl;
+
 
 }
