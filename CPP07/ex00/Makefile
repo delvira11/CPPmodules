@@ -1,19 +1,15 @@
-CC= clang++	
+CC= c++	
 NAME= templates
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 SRC= main.cpp
-OBJ=$(SRC:.c=.o)
 
 
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-
-clean:
-	rm -rf $(OBJ)
 
 fclean:
 	rm -rf $(NAME)
