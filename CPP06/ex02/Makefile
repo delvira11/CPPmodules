@@ -1,7 +1,7 @@
 CC= c++
-NAME= cast
+NAME= base
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-SRC= main.cpp ScalarConverter.cpp
+SRC= main.cpp A.cpp B.cpp C.cpp Base.cpp
 
 
 all: $(NAME)
@@ -9,7 +9,6 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
-
 
 
 fclean:

@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 16:56:08 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 14:57:17 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:55:44 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,5 @@ int main(int nargs, char **args)
             break;
         case 5:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            break;
     }
 }

@@ -18,7 +18,6 @@ int main()
     test = Serializer::serialize(stc);
     std::cout << "Serialized to uint " << test << std::endl;
     testss = Serializer::deserialize(test);
-    std::cout << testss << std::endl;
     std::cout << "deserialized to data " << testss << std::endl;
 
 
