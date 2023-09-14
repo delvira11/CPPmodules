@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:01:53 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/29 18:05:20 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:48:16 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ RPN::~RPN()
 RPN::RPN(RPN &copy)
 {
     this->array = copy.array;
+    this->size = copy.size;
+    this->array = copy.array;
+
 }
 
 RPN &RPN::operator=(RPN &copy)
 {
     this->array = copy.array;
+    this->size = copy.size;
+    this->array = copy.array;
+
     return *this;
 }
 
@@ -93,5 +99,11 @@ void RPN::execute(void)
         }
         i++;
     }
+
+    if (this->stack.size() == 1)
+    {   
     std::cout << this->stack.top() << std::endl;
+    }
+    else
+        throw RPN::EmptyStack();
 }

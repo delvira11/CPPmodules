@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:46:24 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 19:46:25 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:02:38 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ class BitcoinExchange
 
     public:
         BitcoinExchange();
-        //BitcoinExchange(BitcoinExchange &copy);
         BitcoinExchange &operator=(BitcoinExchange &copy);
-        ~BitcoinExchange();
-        
+        ~BitcoinExchange();  
         void setDate(std::string date);
         void setValue(float value);
         std::string getDate();

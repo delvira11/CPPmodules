@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 14:25:59 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/14 18:07:33 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:14:12 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,20 @@ PmergeMe::PmergeMe(char **args)
 PmergeMe::~PmergeMe()
 {
     std::cout << "PmergeMe destructor called" << std::endl;
+}
+
+PmergeMe::PmergeMe(PmergeMe &copy)
+{
+        this->vec = copy.vec;
+        this->lst = copy.lst;
+        this->N = copy.N;
+}
+PmergeMe & PmergeMe::operator=(PmergeMe &copy)
+{
+    this->vec = copy.vec;
+    this->lst = copy.lst;
+    this->N = copy.N;
+    return *this;
 }
 
 int PmergeMe::get_N()
@@ -104,7 +118,9 @@ void PmergeMe::order_highest_pairs()
 
     while (itr != (this->vec.end() - 1))
     {
-        if ((i % 2 == 0) && (*itr > *(itr + 2) && (itr + 2) < this->vec.end()))
+        if ((i % 2) == 0)
+        {
+        while ((*itr > *(itr + 2) && (itr + 2) < this->vec.end()))
         {
 
             aux = *itr;
@@ -113,15 +129,37 @@ void PmergeMe::order_highest_pairs()
             *(itr + 1) = *(itr + 3);
             *(itr + 2) = aux;
             *(itr + 3) = aux2;
-            itr = this->vec.begin();
-            i = 0;
+            itr-=2;
+            i-=2;
         }
-        else
-        {
+            
+            
+        }
             i++;
             itr++;
-        }
     }
+    
+    
+    // while (itr != (this->vec.end() - 1))
+    // {
+    //     if ((i % 2 == 0) && (*itr > *(itr + 2) && (itr + 2) < this->vec.end()))
+    //     {
+
+    //         aux = *itr;
+    //         aux2 = *(itr + 1);
+    //         *itr = *(itr + 2);
+    //         *(itr + 1) = *(itr + 3);
+    //         *(itr + 2) = aux;
+    //         *(itr + 3) = aux2;
+    //         itr = this->vec.begin();
+    //         i = 0;
+    //     }
+    //     else
+    //     {
+    //         i++;
+    //         itr++;
+    //     }
+    // }
 
     // Add the number back to the vector
     if ((this->N % 2) != 0)
@@ -203,7 +241,7 @@ void    PmergeMe::vector_algorithm()
     this->order_highest_pairs();
     this->split_into_vecs();
 
-    
+    // std::cout << "----VECTOR----" << std::endl;
     // for (std::vector<int>::iterator it = this->vec.begin(); it != this->vec.end(); ++it)
     // {
     //     std::cout << *it << std::endl;
@@ -266,7 +304,9 @@ void PmergeMe::l_order_highest_pairs()
     std::advance(itr1, 1);
     std::advance(itr2, 2);
     std::advance(itr3, 3);
-        if ((i % 2 == 0) && (*(itr) > *(itr2)))
+    if ((i % 2) == 0)
+    {
+        while ((*(itr) > *(itr2)) && i >= 0)
         {
 
             aux = *itr;
@@ -275,19 +315,21 @@ void PmergeMe::l_order_highest_pairs()
             *(itr1) = *(itr3);
             *(itr2) = aux;
             *(itr3) = aux2;
-
-
-            itr = this->lst.begin();
-            itr1 = this->lst.begin();
-            itr2 = this->lst.begin();
-            itr3 = this->lst.begin();
-            i = 0;
+    
+            for (int j = 0; j < 2; ++j)
+            {      
+            --itr;
+            --itr1;
+            --itr2;
+            --itr3;
+            i--;
+            }
         }
-        else
-        {
+        
+    }
+
             std::advance(itr, 1);
             i++;
-        }
     }
 
     // Add the number back to the vector
@@ -369,6 +411,8 @@ void    PmergeMe::list_algorithm()
     this->l_order_pairs();
     this->l_order_highest_pairs();
     this->l_split_into_vecs();
+
+    // std::cout << "--LIST---" << std::endl;
     // for (std::list<int>::iterator it = this->lst.begin(); it != this->lst.end(); ++it)
     // {
     //     std::cout << *it << std::endl;

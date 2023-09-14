@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:46:17 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/28 19:46:20 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:32:50 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,14 @@ BitcoinExchange::~BitcoinExchange()
 {
 }
 
-/*
-BitcoinExchange::BitcoinExchange(BitcoinExchange &copy)
-{
-    this->date = copy.date;
-    this->value = copy.value;
-}
-*/
 
 BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange &copy)
 {
     this->date = copy.date;
     this->value = copy.value;
+    this->year = copy.year;
+    this->month = copy.month;
+    this->day = copy.day;
     return *this;
 }
 

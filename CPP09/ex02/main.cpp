@@ -6,12 +6,13 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:30:56 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/14 18:08:55 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 20:01:43 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <ctime>
+#include <chrono>
 
 void    print_before(char **args)
 {
@@ -59,12 +60,15 @@ int main(int nargs, char **args)
         std::cout << "This program needs arguments" << std::endl;
         return (1);
     }
-    
+
+    clock_t start_dataman = clock();
+
     parse_arguments(args);
     
     PmergeMe    data(args);
     print_before(args);
     data.print_data();
+    clock_t end_dataman = clock();
 
     clock_t start_vector = clock();
     data.vector_algorithm();
@@ -77,8 +81,10 @@ int main(int nargs, char **args)
 
     double vector_time = static_cast<double>(end_vector - start_vector) / CLOCKS_PER_SEC;
     double list_time = static_cast<double>(end_list - start_list) / CLOCKS_PER_SEC;
+    double dataman_time = static_cast<double>(end_dataman - start_dataman) / CLOCKS_PER_SEC;
 
-    std::cout << "Time to process a range of " << data.get_N() << " elements with std::vector : " << vector_time << std::endl;
-    std::cout << "Time to process a range of " << data.get_N() << " elements with std::list : " << list_time << std::endl;
 
+    std::cout << "Data management time : " << dataman_time << " seconds" << std::endl;
+    std::cout << "Time to process a range of " << data.get_N() << " elements with std::vector : " << vector_time * 1000 << " milliseconds" << std::endl;
+    std::cout << "Time to process a range of " << data.get_N() << " elements with std::list : " << list_time * 1000 << " milliseconds" << std::endl;
 }

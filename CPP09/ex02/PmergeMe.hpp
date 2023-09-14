@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:31:00 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/07 16:03:49 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:11:58 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class PmergeMe
         
     public:
         PmergeMe(char **args);
+        PmergeMe(PmergeMe &copy);
+        PmergeMe &operator=(PmergeMe &copy);
         ~PmergeMe();
 
 

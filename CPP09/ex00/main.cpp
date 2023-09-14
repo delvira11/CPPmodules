@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:46:32 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/06 14:14:02 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:32:38 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 #include <ctime>
 #include <cstdio>
 
-//Queue porque se puede iterar de forma normal y no va a afectar la forma de entrada y salida y dejo otros containers para otro ex
-//tiene sentido porque se itera desde el principio hasta el final
 
 float stringToFloat1(const std::string& str) 
 {

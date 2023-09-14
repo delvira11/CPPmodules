@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:01:42 by delvira-          #+#    #+#             */
-/*   Updated: 2023/08/29 18:03:17 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 19:48:07 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class RPN
         public:
             virtual const char *what() const throw();
     };
+
 };
 
 int array_size(std::string line);
