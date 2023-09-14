@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 19:04:24 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/13 19:05:05 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
+
 #include <iostream>
 #include <stack>
 
@@ -19,3 +34,4 @@ class MutantStack : public std::stack<T>
         }
 };
 
+#endif

@@ -1,3 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 19:04:01 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/13 19:05:53 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -27,3 +43,5 @@ typename T::iterator   easyfind(T p1, int p2)
     else
         throw except();
 }
+
+#endif

@@ -16,16 +16,16 @@ int main()
     try
     {
     span.addNumber(6);
-    span.addNumber(9);
-    span.addNumber(17);
     span.addNumber(3);
-    //span.addNumber(11);
+    span.addNumber(17);
+    span.addNumber(9);
+    span.addNumber(11);
     //span.addNumber(11);
     //span.addNumber(23);
     //span.addMultiNums(random_nums.begin(), random_nums.end());
     std::cout << "shortest span: " << span.shortestSpan() << std::endl;
     std::cout << "longest span: " << span.longestSpan() << std::endl;
-    span.printVec();
+    //span.printVec();
     }
     catch (std::exception &ex)
     {

@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 19:04:15 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/13 19:05:30 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SPAN_HPP
+#define SPAN_HPP
+
 #include <iostream>
 #include <exception>
 #include <vector>
@@ -24,3 +39,5 @@ class Span
         const char *what() const throw();
     };
 };
+
+#endif

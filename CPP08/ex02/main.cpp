@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/13 19:04:19 by delvira-          #+#    #+#             */
+/*   Updated: 2023/09/13 19:04:20 by delvira-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "MutantStack.hpp"
 #include <list>
 
@@ -20,8 +33,7 @@ int main()
 
     MutantStack<int>::iterator it = mstack.begin();
     MutantStack<int>::iterator ite = mstack.end();
-    ++it;
-    --it;
+
     while (it != ite)
     {
     std::cout << *it << std::endl;

@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:30:56 by delvira-          #+#    #+#             */
-/*   Updated: 2023/09/07 16:31:04 by delvira-         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:08:55 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void    parse_arguments(char **args)
 
 int main(int nargs, char **args)
 {
-    if (nargs == 0)
+    if (nargs <= 2)
     {
         std::cout << "This program needs arguments" << std::endl;
         return (1);
